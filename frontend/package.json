@@ -1,0 +1,61 @@
+{
+  "name": "woodie",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "mariosilvaprada",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint --ext .jsx --ext .js --fix ./src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "and": "^0.0.3",
+    "dotenv-webpack": "^1.8.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.6.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "file-loader": "^5.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.5",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.9.7",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "description": "a simpler create-react-app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarioSilvaPrada/react-boilerplate.git"
+  },
+  "keywords": [
+    "npm",
+    "npm-react",
+    "npm-styled-components"
+  ],
+  "bugs": {
+    "url": "https://github.com/MarioSilvaPrada/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/MarioSilvaPrada/react-boilerplate#readme"
+}
