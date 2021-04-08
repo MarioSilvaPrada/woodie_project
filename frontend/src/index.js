@@ -1,5 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
+
+import regeneratorRuntime from "regenerator-runtime"; //to use async await
+
 // import 'normalize.css';
 import './index.css';
 

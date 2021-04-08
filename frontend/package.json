@@ -58,5 +58,6 @@
   "bugs": {
     "url": "https://github.com/MarioSilvaPrada/react-boilerplate/issues"
   },
-  "homepage": "https://github.com/MarioSilvaPrada/react-boilerplate#readme"
+  "homepage": "https://github.com/MarioSilvaPrada/react-boilerplate#readme",
+  "proxy": "http://127.0.0.1:8000/"
 }

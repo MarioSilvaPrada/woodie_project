@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as S from './App.styled';
 
+import { getProducts } from 'api/products';
+
 const App = () => {
-  console.log(process.env.API_STAGING_URL)
+  useEffect(() => {
+    getProducts();
+  }, []);
   return (
     <S.Container>
       <h1>Home</h1>
