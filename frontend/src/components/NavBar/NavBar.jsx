@@ -1,12 +1,17 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import * as S from './NavBar.styled';
 
-const NavBar = () => (
+const NavBar = ({ logo }) => (
   <S.Container>
-    <S.StyledLink to="/">Home</S.StyledLink>
-    <S.StyledLink to="/1">Page1</S.StyledLink>
-    <S.StyledLink to="/2">Page2</S.StyledLink>
+    <Link to='/'>
+      <S.Logo src={logo} />
+    </Link>
+    <div>
+      <S.StyledLink to='/1'>Galeria</S.StyledLink>
+      <S.StyledLink to='/2'>Sobre</S.StyledLink>
+      <S.StyledLink to='/'>Contactos</S.StyledLink>
+    </div>
   </S.Container>
 );
 

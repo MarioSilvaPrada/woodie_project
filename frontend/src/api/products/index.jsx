@@ -2,10 +2,10 @@ import api from 'api';
 
 const getProducts = async () => {
   try {
-    const res = await api.get('api/products/');
+    const res = await api.get(process.env.PRODUCTS);
 
     if (res.status === 200) {
-      console.log(res.data);
+      return res.data;
     }
   } catch (err) {
     console.log(err.response);

@@ -1,35 +1,51 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React, { useState, useEffect } from 'react';
 
-import regeneratorRuntime from "regenerator-runtime"; //to use async await
-
-// import 'normalize.css';
 import './index.css';
+import { getSettings } from 'api/settings';
+import { getProducts } from 'api/products';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import NavBar from './components/NavBar/NavBar';
 import App from './routes/App/App';
 import theme from './theme/';
 // Pages
 import Page1 from './routes/Page1/Page';
 import Page2 from './routes/Page2/Page';
 import PageNotFound from './routes/PageNotFound/PageNotFound';
+import NavBar from 'components/NavBar/NavBar';
 
-// Components
-const rootElement = document.getElementById('root');
-const root = (
-  <ThemeProvider theme={theme}>
-    <Router>
-      <NavBar />
-      <Switch>
-        <Route exact path='/' component={App} />
-        <Route exact path='/1' component={Page1} />
-        <Route exact path='/2' component={Page2} />
-        <Route path='*' component={PageNotFound} />
-      </Switch>
-    </Router>
-  </ThemeProvider>
-);
+const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [styleSettings, setStyleSettings] = useState({});
 
-render(root, rootElement);
+  const fetchData = async () => {
+    const res = await getSettings();
+    const myProducts = await getProducts();
+    setStyleSettings(res[0]);
+    setIsLoading(false);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  return !isLoading ? (
+    <ThemeProvider theme={theme}>
+      <Router>
+        <NavBar logo={styleSettings.logo} />
+        <Switch>
+          <Route
+            exact
+            path='/'
+            component={() => <App backImg={styleSettings.main_background} />}
+          />
+          <Route exact path='/1' component={Page1} />
+          <Route exact path='/2' component={Page2} />
+          <Route path='*' component={PageNotFound} />
+        </Switch>
+      </Router>
+    </ThemeProvider>
+  ) : (
+    <h1>Loading...</h1>
+  );
+};
+
+export default Index;

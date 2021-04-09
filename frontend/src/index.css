@@ -10,7 +10,7 @@
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,4 +18,8 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h1 {
+  font-family: 'Noto Serif', serif;
 }

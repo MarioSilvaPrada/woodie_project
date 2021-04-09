@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from products.views import ProductAPIView
+from style_settings.views import StyleSettingsAPIView
 
 
 app_name = 'api'
@@ -11,6 +12,7 @@ app_name = 'api'
 
 router = DefaultRouter()
 router.register('products', ProductAPIView)
+router.register('style-settings', StyleSettingsAPIView)
 
 urlpatterns = [
     path('', include(router.urls))

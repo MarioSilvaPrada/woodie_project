@@ -1,15 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './App.styled';
 
-import { getProducts } from 'api/products';
+import Button from 'components/Button';
 
-const App = () => {
-  useEffect(() => {
-    getProducts();
-  }, []);
+const App = ({ backImg }) => {
   return (
-    <S.Container>
-      <h1>Home</h1>
+    <S.Container backImage={backImg}>
+      <S.Layer />
+      <S.Wrapper>
+        <S.MainTitle>We are Woodie</S.MainTitle>
+        <S.Description>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet
+          congue nisi, ornare commodo quam ultrices nec. Fusce venenatis semper
+          elementum. Etiam feugiat turpis quis cursus semper.
+        </S.Description>
+        <Button route={'products'}>Check our work</Button>
+      </S.Wrapper>
     </S.Container>
   );
 };
