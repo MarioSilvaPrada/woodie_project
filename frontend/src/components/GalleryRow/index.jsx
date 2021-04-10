@@ -9,23 +9,21 @@ const GalleryRow = ({ articles }) => {
         <S.StyledLink to='galeria'>Ver todos</S.StyledLink>
       </S.Header>
       <S.ProductsWrapper>
-        {articles.map(
-          ({
-            name,
-            price,
-            description,
-            main_image,
-            image1,
-            image2,
-            image3,
-          }) => (
-            <S.Product>
-              <S.ProductImg mainImg={main_image} />
-              <p>{name}</p>
-              <p>{price}€</p>
-            </S.Product>
-          )
-        )}
+        {articles.map((article) => (
+          <S.Product
+            to={{
+              pathname: `artigo/${article.id}`,
+              state: {
+                article,
+              },
+            }}
+            key={article.id}
+          >
+            <S.ProductImg mainImg={article.main_image} />
+            <S.ProductTitle>{article.name}</S.ProductTitle>
+            <p>{article.price}€</p>
+          </S.Product>
+        ))}
       </S.ProductsWrapper>
     </S.Container>
   );

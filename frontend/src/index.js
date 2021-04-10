@@ -11,8 +11,10 @@ import theme from './theme/';
 // Pages
 import Page1 from './routes/Page1/Page';
 import Page2 from './routes/Page2/Page';
+import ProductPage from './routes/ProductPage';
 import PageNotFound from './routes/PageNotFound/PageNotFound';
 import NavBar from 'components/NavBar/NavBar';
+import Spinner from 'components/Spinner';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -47,14 +49,14 @@ const Index = () => {
             )}
           />
           <Route exact path='/galeria' component={Page1} />
-          <Route exact path='/artigo/:slug' component={Page1} />
+          <Route exact path='/artigo/:id' component={ProductPage} />
           <Route exact path='/2' component={Page2} />
           <Route path='*' component={PageNotFound} />
         </Switch>
       </Router>
     </ThemeProvider>
   ) : (
-    <h1>Loading...</h1>
+    <Spinner />
   );
 };
 
