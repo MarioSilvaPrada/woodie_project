@@ -16,13 +16,13 @@ export const Container = styled.div`
 `;
 
 export const MainTitle = styled.h1`
-  font-size: 5rem;
+  font-size: ${({ theme }) => theme.fontSize.XXL};
   margin-bottom: 2.4rem;
 `;
 
 export const Description = styled.p`
   max-width: 40rem;
-  font-size: 1.1rem;
+  font-size: ${({ theme }) => theme.fontSize.M};
   line-height: 1.6rem;
   text-align: center;
   margin-bottom: 2rem;

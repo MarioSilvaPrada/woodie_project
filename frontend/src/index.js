@@ -18,10 +18,14 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [styleSettings, setStyleSettings] = useState({});
 
+  const [articles, setArticles] = useState([]);
+
   const fetchData = async () => {
     const res = await getSettings();
     const myProducts = await getProducts();
+
     setStyleSettings(res[0]);
+    setArticles(myProducts);
     setIsLoading(false);
   };
   useEffect(() => {
@@ -35,9 +39,15 @@ const Index = () => {
           <Route
             exact
             path='/'
-            component={() => <App backImg={styleSettings.main_background} />}
+            component={() => (
+              <App
+                backImg={styleSettings.main_background}
+                articles={articles}
+              />
+            )}
           />
-          <Route exact path='/1' component={Page1} />
+          <Route exact path='/galeria' component={Page1} />
+          <Route exact path='/artigo/:slug' component={Page1} />
           <Route exact path='/2' component={Page2} />
           <Route path='*' component={PageNotFound} />
         </Switch>

@@ -2,21 +2,25 @@ import React, { useEffect, useState } from 'react';
 import * as S from './App.styled';
 
 import Button from 'components/Button';
+import GalleryRow from 'components/GalleryRow';
 
-const App = ({ backImg }) => {
+const App = ({ backImg, articles }) => {
   return (
-    <S.Container backImage={backImg}>
-      <S.Layer />
-      <S.Wrapper>
-        <S.MainTitle>We are Woodie</S.MainTitle>
-        <S.Description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet
-          congue nisi, ornare commodo quam ultrices nec. Fusce venenatis semper
-          elementum. Etiam feugiat turpis quis cursus semper.
-        </S.Description>
-        <Button route={'products'}>Check our work</Button>
-      </S.Wrapper>
-    </S.Container>
+    <>
+      <S.Container backImage={backImg}>
+        <S.Layer />
+        <S.Wrapper>
+          <S.MainTitle>We are Woodie</S.MainTitle>
+          <S.Description>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            imperdiet congue nisi, ornare commodo quam ultrices nec. Fusce
+            venenatis semper elementum. Etiam feugiat turpis quis cursus semper.
+          </S.Description>
+          <Button route={'products'}>Check our work</Button>
+        </S.Wrapper>
+      </S.Container>
+      <GalleryRow articles={articles} />
+    </>
   );
 };
 
