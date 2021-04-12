@@ -40,7 +40,7 @@ const ProductPage = () => {
           <S.MainImage backImage={article.main_image} />
           <S.SecondaryImages>
             {getImageArray().map((img) => (
-              <S.StyledImg backImage={img} />
+              <S.StyledImg key={img} backImage={img} />
             ))}
           </S.SecondaryImages>
         </S.ImagesContainer>
