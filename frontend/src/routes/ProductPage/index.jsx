@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import * as S from './style';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import Spinner from 'components/Spinner';
+import { getSingleProduct } from 'api/products';
 
 const ProductPage = () => {
   const location = useLocation();
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  const { id } = useParams();
+
+  const getProduct = async () => {
+    const res = await getSingleProduct(id);
+    setArticle(res);
+    setIsLoading(false);
+  };
+
   useEffect(() => {
     if (location?.state?.article) {
+      console.log('ola');
       setArticle(location.state.article);
       setIsLoading(false);
     } else {
       //call api
+      getProduct();
     }
   }, []);
 
@@ -28,7 +39,6 @@ const ProductPage = () => {
     return arr;
   };
 
-  console.log(location.state.article);
   return !isLoading ? (
     <S.Container>
       <S.Wrapper>

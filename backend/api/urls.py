@@ -1,19 +1,22 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from products.views import ProductAPIView
+from django.urls import path
+from products.views import ProductAPIView, SingleProductAPIView
 from style_settings.views import StyleSettingsAPIView
 
 
 app_name = 'api'
 
-# urlpatterns = [
-#     path('products', ProductAPIView.as_view()),
-# ]
 
-router = DefaultRouter()
-router.register('products', ProductAPIView)
-router.register('style-settings', StyleSettingsAPIView)
+productsList = ProductAPIView.as_view({
+    'get': 'list',
+    'post': 'create'
+})
+
+styleSettingsList = StyleSettingsAPIView.as_view({
+    'get': 'list',
+})
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('products/', productsList, name='all_products'),
+    path('products/<int:pk>/', SingleProductAPIView.as_view(), name='detail_product'),
+    path('style-settings/', styleSettingsList, name='all_style_settings'),
 ]
