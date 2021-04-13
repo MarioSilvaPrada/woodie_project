@@ -1,4 +1,6 @@
 const theme = {
+  navHeight: '3.5rem',
+  siteMargin: '2rem',
   colors: {
     brown: '#966c3b',
   },

@@ -3,6 +3,7 @@ import * as S from './style';
 import { useLocation, useParams } from 'react-router-dom';
 import Spinner from 'components/Spinner';
 import { getSingleProduct } from 'api/products';
+import Button from 'components/Button';
 
 const ProductPage = () => {
   const location = useLocation();
@@ -42,10 +43,14 @@ const ProductPage = () => {
   return !isLoading ? (
     <S.Container>
       <S.Wrapper>
-        <S.TextWrapper>
-          <S.MainTitle>{article.name}</S.MainTitle>
-          <p>{article.description}</p>
-        </S.TextWrapper>
+        <S.SideWrapper>
+          <S.TextWrapper>
+            <S.MainTitle>{article.name}</S.MainTitle>
+            <S.Price>{article.price}€</S.Price>
+            <p>{article.description}</p>
+          </S.TextWrapper>
+          <Button to='#'>Reservar</Button>
+        </S.SideWrapper>
         <S.ImagesContainer>
           <S.MainImage backImage={article.main_image} />
           <S.SecondaryImages>

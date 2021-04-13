@@ -1,6 +1,8 @@
 import React from 'react';
 import * as S from './style';
 
+import ProductCard from 'components/ProductCard';
+
 const GalleryRow = ({ articles }) => {
   return (
     <S.Container>
@@ -10,19 +12,7 @@ const GalleryRow = ({ articles }) => {
       </S.Header>
       <S.ProductsWrapper>
         {articles.map((article) => (
-          <S.Product
-            to={{
-              pathname: `artigo/${article.id}`,
-              state: {
-                article,
-              },
-            }}
-            key={article.id}
-          >
-            <S.ProductImg mainImg={article.main_image} />
-            <S.ProductTitle>{article.name}</S.ProductTitle>
-            <p>{article.price}€</p>
-          </S.Product>
+          <ProductCard article={article} />
         ))}
       </S.ProductsWrapper>
     </S.Container>

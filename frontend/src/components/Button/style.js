@@ -7,6 +7,7 @@ export const StyledContainer = styled(Link)`
   border-radius: ${({ theme }) => theme.borderRadius};
   border: 1px solid white;
   transition: 0.5s;
+  color: white;
 
   &:hover {
     transform: translateY(-0.2rem);

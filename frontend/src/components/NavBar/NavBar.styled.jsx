@@ -6,12 +6,15 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(0, 0, 0, 0.3);
+  background: ${({ theme }) => theme.colors.brown};
   color: white;
   position: fixed;
+  top: 0;
   right: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1000;
+  height: ${({ theme }) => theme.navHeight};
+  border-bottom: 0.15rem solid white;
 `;
 
 export const StyledLink = styled(Link)`
@@ -19,5 +22,5 @@ export const StyledLink = styled(Link)`
 `;
 
 export const Logo = styled.img`
-  width: 5rem;
+  height: 100%;
 `;

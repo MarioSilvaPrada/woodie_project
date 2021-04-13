@@ -49,9 +49,21 @@ export const SecondaryImages = styled.div`
 export const TextWrapper = styled.div`
   margin-right: 4rem;
   max-width: 30rem;
+  margin-bottom: 3rem;
 `;
 
 export const MainTitle = styled.h1`
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   font-size: ${({ theme }) => theme.fontSize.XL};
+`;
+
+export const Price = styled.h1`
+  color: ${({ theme }) => theme.colors.brown};
+  margin-bottom: 1rem;
+`;
+
+export const SideWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;

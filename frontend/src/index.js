@@ -9,7 +9,7 @@ import { ThemeProvider } from 'styled-components';
 import App from './routes/App/App';
 import theme from './theme/';
 // Pages
-import Page1 from './routes/Page1/Page';
+import Galeria from './routes/Galeria';
 import Page2 from './routes/Page2/Page';
 import ProductPage from './routes/ProductPage';
 import PageNotFound from './routes/PageNotFound/PageNotFound';
@@ -48,7 +48,11 @@ const Index = () => {
               />
             )}
           />
-          <Route exact path='/galeria' component={Page1} />
+          <Route
+            exact
+            path='/galeria'
+            component={() => <Galeria articles={articles} />}
+          />
           <Route exact path='/artigo/:id' component={ProductPage} />
           <Route exact path='/2' component={Page2} />
           <Route path='*' component={PageNotFound} />

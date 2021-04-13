@@ -8,11 +8,13 @@ export const Layer = styled.div`
 `;
 
 export const Container = styled.div`
-  height: 100vh;
+  height: calc(100vh - ${({ theme }) => theme.navHeight});
   background-image: url(${({ backImage }) => backImage || ''});
   background-size: cover;
   display: flex;
   justify-content: center;
+  position: relative;
+  margin-top: ${({ theme }) => theme.navHeight};
 `;
 
 export const MainTitle = styled.h1`

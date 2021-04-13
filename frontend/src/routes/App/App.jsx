@@ -16,7 +16,7 @@ const App = ({ backImg, articles }) => {
             imperdiet congue nisi, ornare commodo quam ultrices nec. Fusce
             venenatis semper elementum. Etiam feugiat turpis quis cursus semper.
           </S.Description>
-          <Button route={'products'}>Check our work</Button>
+          <Button route={'galeria'}>Check our gallery</Button>
         </S.Wrapper>
       </S.Container>
       <GalleryRow articles={articles} />
