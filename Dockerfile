@@ -6,7 +6,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Set work directory
-WORKDIR /woodie_api
+WORKDIR /backend
 
 # Install dependencies
 COPY ./requirements.txt /requirements.txt
@@ -16,4 +16,4 @@ COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
 # Copy project
-COPY . /woodie_api
+COPY ./backend /backend
