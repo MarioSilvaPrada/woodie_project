@@ -3,12 +3,11 @@ setup:
     - plan: heroku-postgresql
 build:
   docker:
-    web: Dockerfile
-    worker: backend/Dockerfile
+    web: backend/Dockerfile
 release:
-  image: worker
+  image: web
   command:
-    - python manage.py collectstatic --noinput
+    - python ./backend/manage.py collectstatic --noinput
 run:
   web: gunicorn woodie_api.wsgi
   
