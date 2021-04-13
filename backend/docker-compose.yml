@@ -12,7 +12,7 @@ services:
       - DB_NAME=app
       - DB_USER=postgres
       - DB_PASS=supersecretpassword
-      - DEBUG=0
+      - DEBUG=1
     depends_on:
       - db
   db:
