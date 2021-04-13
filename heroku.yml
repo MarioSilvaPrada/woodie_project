@@ -5,8 +5,8 @@ build:
   docker:
     web: backend/Dockerfile
 release:
-  image: backend/web
+  image: web
   command:
-    - python manage.py collectstatic --noinput
+    - python backend/manage.py collectstatic --noinput
 run:
   web: gunicorn backend/woodie_api.wsgi
