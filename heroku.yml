@@ -7,7 +7,7 @@ build:
 release:
   image: web
   command:
-    - python ./backend/manage.py collectstatic --noinput
+    - python ./manage.py collectstatic --noinput
 run:
-  web: gunicorn backend/woodie_api.wsgi
+  web: gunicorn ./woodie_api.wsgi
   
