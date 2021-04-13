@@ -2,7 +2,7 @@ version: '3.7'
 services:
   app:
     build: .
-    command: python /woodie_api/manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/woodie_api
     ports:
