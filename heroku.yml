@@ -3,9 +3,10 @@ setup:
     - plan: heroku-postgresql
 build:
   docker:
-    web: backend/Dockerfile
+    web: Dockerfile
+    worker: backend/Dockerfile
 release:
-  image: web
+  image: worker
   command:
     - python manage.py collectstatic --noinput
 run:
