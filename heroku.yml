@@ -9,5 +9,5 @@ release:
   command:
     - python ./backend/manage.py collectstatic --noinput
 run:
-  web: gunicorn woodie_api.wsgi
+  web: gunicorn backend/woodie_api.wsgi
   
