@@ -5,7 +5,7 @@ build:
   docker:
     web: backend/Dockerfile
 release:
-  image: web
+  image: backend/web
   command:
     - python manage.py collectstatic --noinput
 run:
