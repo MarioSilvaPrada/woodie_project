@@ -16,4 +16,4 @@ COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
 # Copy project
-COPY ./woodie_api /woodie_api
+COPY . /woodie_api
