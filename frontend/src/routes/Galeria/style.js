@@ -11,7 +11,7 @@ export const Title = styled.h1`
 
 export const StyledGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   place-items: center;
 `;

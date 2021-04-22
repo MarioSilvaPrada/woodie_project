@@ -1,9 +1,10 @@
 import React from 'react';
 import * as S from './style';
 
-const ProductCard = ({ article, noInfo }) => {
+const ProductCard = ({ article, noInfo, type }) => {
   return (
     <S.Product
+      type
       to={{
         pathname: `artigo/${article.id}`,
         state: {

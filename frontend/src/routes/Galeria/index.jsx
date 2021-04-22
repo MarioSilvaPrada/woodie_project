@@ -9,7 +9,7 @@ const Galeria = ({ articles }) => {
       <S.Title>Galeria</S.Title>
       <S.StyledGrid>
         {articles.map((el) => (
-          <ProductCard key={el.id} article={el} noInfo />
+          <ProductCard key={el.id} article={el} noInfo type='galeria' />
         ))}
       </S.StyledGrid>
     </S.Wrapper>

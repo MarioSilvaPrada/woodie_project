@@ -16,7 +16,7 @@ export const Product = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: ${({ type }) => (type === 'galeria' ? 0 : '1rem')};
 
   &:hover {
     ${ProductImg} {
