@@ -1,6 +1,8 @@
 from django.db import models
 import uuid
 import os
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
 
 from colorfield.fields import ColorField
 
@@ -31,6 +33,11 @@ class Product(models.Model):
         null=True, blank=True, upload_to=recipe_image_file_path)
     image3 = models.ImageField(
         null=True, blank=True, upload_to=recipe_image_file_path)
+
+    @receiver(post_delete, sender=main_image)
+    def remove_file_from_s3(sender, instance, using, **kwargs):
+        instance.img.delete(save=False)
+        # https://stackoverflow.com/questions/5372934/how-do-i-get-django-admin-to-delete-files-when-i-remove-an-object-from-the-datab
 
     def __str__(self):
         return self.name
