@@ -114,6 +114,8 @@ AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 AWS_DEFAULT_ACL = 'public-read'
 AWS_LOCATION = 'static'
 
+# https://www.youtube.com/watch?v=ahBG_iLbJPM
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
