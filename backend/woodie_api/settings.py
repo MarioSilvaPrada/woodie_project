@@ -30,7 +30,8 @@ SECRET_KEY = '@k-wcwj%y(gifn_&x^+^l8)z@68dam4v=e8j_k4t9l%3osk1zx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sleepy-badlands-01700.herokuapp.com','localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['sleepy-badlands-01700.herokuapp.com',
+                 'localhost', '127.0.0.1']
 
 CORS_ORIGIN_WHITELIST = ('http://localhost:9000',)
 
@@ -102,6 +103,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'woodie_api.wsgi.application'
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+AWS_ACCESS_KEY_ID = 'AKIAXNEQY35GQSZ3WWFD'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'woodie-static-files'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazon.aws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+AWS_DEFAULT_ACL = 'public-read'
+AWS_LOCATION = 'static'
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -158,7 +170,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_FINDERS = [
