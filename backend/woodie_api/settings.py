@@ -109,7 +109,7 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 AWS_ACCESS_KEY_ID = 'AKIAXNEQY35GQSZ3WWFD'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'woodie-static-files'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazon.aws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.eu-west-2.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 AWS_DEFAULT_ACL = 'public-read'
 AWS_LOCATION = 'static'
@@ -170,7 +170,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'media'),
+]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_FINDERS = [
@@ -178,5 +181,5 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

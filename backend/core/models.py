@@ -9,7 +9,7 @@ def settings_image(instance, filename):
     ext = filename.split('.')[-1]
     filename = f'{uuid.uuid4()}.{ext}'
 
-    return os.path.join('static/images/site_settings/', filename)
+    return os.path.join('images/site_settings/', filename)
 
 
 def recipe_image_file_path(instance, filename):
@@ -17,7 +17,7 @@ def recipe_image_file_path(instance, filename):
     ext = filename.split('.')[-1]
     filename = f'{uuid.uuid4()}.{ext}'
 
-    return os.path.join('static/images/products/', filename)
+    return os.path.join('images/products/', filename)
 
 
 class Product(models.Model):
