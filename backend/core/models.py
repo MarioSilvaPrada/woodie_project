@@ -1,8 +1,8 @@
 from django.db import models
 import uuid
 import os
-from django.db.models.signals import post_delete
-from django.dispatch import receiver
+from django.db.models.signals import pre_delete
+from django.dispatch.dispatcher import receiver
 
 from colorfield.fields import ColorField
 
@@ -34,10 +34,14 @@ class Product(models.Model):
     image3 = models.ImageField(
         null=True, blank=True, upload_to=recipe_image_file_path)
 
-    @receiver(post_delete, sender=main_image)
-    def remove_file_from_s3(sender, instance, using, **kwargs):
-        instance.img.delete(save=False)
-        # https://stackoverflow.com/questions/5372934/how-do-i-get-django-admin-to-delete-files-when-i-remove-an-object-from-the-datab
+    def delete(self, *args, **kwargs):
+        print('delete!!')
+        # You have to prepare what you need before delete the model
+        storage, path = self.main_image.storage, self.main_image.path
+        # Delete the model before the file
+        super(Product, self).delete(*args, **kwargs)
+        # Delete the file after the model
+        storage.delete(path)
 
     def __str__(self):
         return self.name
