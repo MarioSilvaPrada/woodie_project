@@ -12,6 +12,7 @@ services:
       - DB_NAME=app
       - DB_USER=postgres
       - DB_PASS=supersecretpassword
+      - SECRET_KEY=@k-wcwj%y(gifn_&x^+^l8)z@68dam4v=e8j_k4t9l%3osk1zx
       - AWS_ACCESS_KEY_ID=AKIAXNEQY35GQSZ3WWFD
       - AWS_SECRET_ACCESS_KEY=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
       - DEBUG=1
