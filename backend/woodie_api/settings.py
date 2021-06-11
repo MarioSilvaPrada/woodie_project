@@ -30,7 +30,7 @@ SECRET_KEY = '@k-wcwj%y(gifn_&x^+^l8)z@68dam4v=e8j_k4t9l%3osk1zx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sleepy-badlands-01700.herokuapp.com',
+ALLOWED_HOSTS = ['woodie-backend.herokuapp.com',
                  'localhost', '127.0.0.1']
 
 CORS_ORIGIN_WHITELIST = ('http://localhost:9000',)
