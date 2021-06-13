@@ -4,6 +4,7 @@ import * as S from './style';
 import ProductCard from 'components/ProductCard';
 
 const GalleryRow = ({ articles }) => {
+  console.log({ articles });
   return (
     <S.Container>
       <S.Header>
@@ -12,7 +13,7 @@ const GalleryRow = ({ articles }) => {
       </S.Header>
       <S.ProductsWrapper>
         {articles.map((article) => (
-          <ProductCard article={article} />
+          <ProductCard key={article.id} article={article} />
         ))}
       </S.ProductsWrapper>
     </S.Container>

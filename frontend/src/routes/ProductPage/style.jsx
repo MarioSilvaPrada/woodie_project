@@ -1,5 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
+
+const opacityAnim = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
 
 export const Container = styled.div`
   height: 100vh;
@@ -34,6 +43,7 @@ export const StyledImg = styled.div`
   height: 100%;
   margin-bottom: 0.5rem;
   border-radius: ${({ theme }) => theme.borderRadius};
+  animation: 1s ${opacityAnim} ease-out;
 
   &:last-child {
     margin-bottom: 0;

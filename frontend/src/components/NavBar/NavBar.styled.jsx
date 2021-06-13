@@ -7,14 +7,14 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   background: ${({ theme }) => theme.colors.brown};
-  color: white;
+  color: ${({ theme }) => theme.colors.darkBrown};
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1000;
   height: ${({ theme }) => theme.navHeight};
-  border-bottom: 0.15rem solid white;
+  border-bottom: 0.15rem solid ${({ theme }) => theme.colors.darkBrown};
 `;
 
 export const StyledLink = styled(Link)`

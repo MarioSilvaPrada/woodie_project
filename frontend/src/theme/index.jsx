@@ -1,8 +1,9 @@
 const theme = {
-  navHeight: '3.5rem',
+  navHeight: '5rem',
   siteMargin: '2rem',
   colors: {
-    brown: '#966c3b',
+    brown: '#efe4d0',
+    darkBrown: '#1a1a1a',
   },
   fontSize: {
     S: '.8rem',
