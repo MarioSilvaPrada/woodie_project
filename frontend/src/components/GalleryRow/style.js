@@ -17,10 +17,16 @@ export const StyledLink = styled(Link)`
   border-bottom: 2px solid ${({ theme }) => theme.colors.brown};
   font-size: ${({ theme }) => theme.fontSize.M};
   font-weight: bold;
+  color: ${({ theme }) => theme.colors.darkBrown};
 `;
 
 export const ProductsWrapper = styled.div`
   display: flex;
   align-items: center;
   overflow-x: scroll;
+  padding: 1rem;
+`;
+
+export const Title = styled.h1`
+  color: ${({ theme }) => theme.colors.darkBrown};
 `;

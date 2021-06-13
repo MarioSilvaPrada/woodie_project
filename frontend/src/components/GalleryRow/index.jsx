@@ -8,7 +8,7 @@ const GalleryRow = ({ articles }) => {
   return (
     <S.Container>
       <S.Header>
-        <h1>Já disponível</h1>
+        <S.Title>Já disponível</S.Title>
         <S.StyledLink to='galeria'>Ver todos</S.StyledLink>
       </S.Header>
       <S.ProductsWrapper>

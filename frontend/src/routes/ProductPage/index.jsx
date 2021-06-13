@@ -4,6 +4,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import Spinner from 'components/Spinner';
 import { getSingleProduct } from 'api/products';
 import Button from 'components/Button';
+import LazyImage from 'components/LazyImage';
 
 const ProductPage = () => {
   const location = useLocation();
@@ -52,10 +53,19 @@ const ProductPage = () => {
           <Button to='#'>Reservar</Button>
         </S.SideWrapper>
         <S.ImagesContainer>
-          <S.MainImage backImage={article.main_image} />
+          <LazyImage
+            alt='Main Picture'
+            src={article.main_image}
+            Element={<S.MainImage backImage={article.main_image} />}
+          />
           <S.SecondaryImages>
             {getImageArray().map((img) => (
-              <S.StyledImg key={img} backImage={img} />
+              <LazyImage
+                key={img}
+                alt='Other Picture'
+                src={img}
+                Element={<S.StyledImg key={img} backImage={img} />}
+              />
             ))}
           </S.SecondaryImages>
         </S.ImagesContainer>

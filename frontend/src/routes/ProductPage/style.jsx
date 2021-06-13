@@ -35,6 +35,8 @@ export const MainImage = styled.div`
   width: 50%;
   margin-right: 0.5rem;
   border-radius: ${({ theme }) => theme.borderRadius};
+  animation: 1s ${opacityAnim} ease-out;
+
 `;
 export const StyledImg = styled.div`
   background-image: url(${({ backImage }) => backImage});
