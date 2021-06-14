@@ -45,6 +45,7 @@ const Index = () => {
               <App
                 backImg={styleSettings.main_background}
                 articles={articles}
+                logo={styleSettings.logo}
               />
             )}
           />

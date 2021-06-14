@@ -9,7 +9,6 @@ export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.1rem;
   padding: 1rem;
 `;
 
@@ -25,6 +24,10 @@ export const ProductsWrapper = styled.div`
   align-items: center;
   overflow-x: scroll;
   padding: 1rem;
+
+  a:not(:last-child) {
+    margin-right: 2rem;
+  }
 `;
 
 export const Title = styled.h1`

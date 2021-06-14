@@ -14,7 +14,6 @@ export const Container = styled.div`
   left: 0;
   z-index: 1000;
   height: ${({ theme }) => theme.navHeight};
-  border-bottom: 0.15rem solid ${({ theme }) => theme.colors.darkBrown};
 `;
 
 export const StyledLink = styled(Link)`

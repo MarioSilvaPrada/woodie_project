@@ -30,7 +30,7 @@ export const ProductTitle = styled.p`
 `;
 
 export const StyledPrice = styled.p`
-  color: white;
+  color: ${({ theme }) => theme.colors.darkBrown};;
   background: ${({ theme }) => theme.colors.brown};
   padding: 0.5rem 0.7rem;
   border-radius: ${({ theme }) => theme.borderRadius};

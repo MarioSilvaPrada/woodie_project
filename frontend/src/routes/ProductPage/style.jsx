@@ -36,7 +36,6 @@ export const MainImage = styled.div`
   margin-right: 0.5rem;
   border-radius: ${({ theme }) => theme.borderRadius};
   animation: 1s ${opacityAnim} ease-out;
-
 `;
 export const StyledImg = styled.div`
   background-image: url(${({ backImage }) => backImage});
@@ -69,9 +68,9 @@ export const MainTitle = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.XL};
 `;
 
-export const Price = styled.h1`
-  color: ${({ theme }) => theme.colors.brown};
-  margin-bottom: 1rem;
+export const Price = styled.h2`
+  color: ${({ theme }) => theme.colors.darkBrown};
+  margin-bottom: 0.7rem;
 `;
 
 export const SideWrapper = styled.div`

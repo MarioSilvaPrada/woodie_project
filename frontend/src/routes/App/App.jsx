@@ -3,14 +3,15 @@ import * as S from './App.styled';
 
 import Button from 'components/Button';
 import GalleryRow from 'components/GalleryRow';
+import Footer from 'components/Footer';
 
-const App = ({ backImg, articles }) => {
+const App = ({ backImg, articles, logo }) => {
   return (
     <>
       <S.Container backImage={backImg}>
         <S.Layer />
         <S.Wrapper>
-          <S.MainTitle>We are Woodie</S.MainTitle>
+          <S.MainTitle>We are Woodi</S.MainTitle>
           <S.Description>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
             imperdiet congue nisi, ornare commodo quam ultrices nec. Fusce
@@ -20,6 +21,7 @@ const App = ({ backImg, articles }) => {
         </S.Wrapper>
       </S.Container>
       <GalleryRow articles={articles} />
+      <Footer logo={logo} />
     </>
   );
 };

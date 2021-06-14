@@ -13,6 +13,7 @@ const MyLazyImage = ({ alt, Element, src }) => {
             width: '100%',
             background: 'rgba(0,0,0,0.2)',
             margin: '.2rem',
+            borderRadius: '.4rem',
           }}
         />
       )}
