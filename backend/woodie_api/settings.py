@@ -64,7 +64,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'colorfield',
     'whitenoise.runserver_nostatic',
-    'django_cleanup.apps.CleanupConfig',
 
     # Local
     'api',
