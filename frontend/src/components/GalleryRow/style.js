@@ -25,6 +25,10 @@ export const ProductsWrapper = styled.div`
   overflow-x: scroll;
   padding: 1rem;
 
+  a {
+    width: 22rem;
+  }
+
   a:not(:last-child) {
     margin-right: 2rem;
   }

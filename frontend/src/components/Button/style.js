@@ -5,7 +5,7 @@ export const StyledContainer = styled(Link)`
   padding: 0.8rem 1.5rem;
   background: ${({ theme }) => theme.colors.brown};
   border-radius: ${({ theme }) => theme.borderRadius};
-  border: 1px solid ${({ theme }) => theme.colors.darkBrown};
+  border: 2px solid ${({ theme }) => theme.colors.darkBrown};
   transition: 0.5s;
   color: ${({ theme }) => theme.colors.darkBrown};
 

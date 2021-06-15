@@ -3,9 +3,8 @@ import * as S from './App.styled';
 
 import Button from 'components/Button';
 import GalleryRow from 'components/GalleryRow';
-import Footer from 'components/Footer';
 
-const App = ({ backImg, articles, logo }) => {
+const App = ({ backImg, articles }) => {
   return (
     <>
       <S.Container backImage={backImg}>
@@ -21,7 +20,6 @@ const App = ({ backImg, articles, logo }) => {
         </S.Wrapper>
       </S.Container>
       <GalleryRow articles={articles} />
-      <Footer logo={logo} />
     </>
   );
 };

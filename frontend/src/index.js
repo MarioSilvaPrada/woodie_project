@@ -15,6 +15,7 @@ import ProductPage from './routes/ProductPage';
 import PageNotFound from './routes/PageNotFound/PageNotFound';
 import NavBar from 'components/NavBar/NavBar';
 import Spinner from 'components/Spinner';
+import Footer from 'components/Footer';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,7 +46,6 @@ const Index = () => {
               <App
                 backImg={styleSettings.main_background}
                 articles={articles}
-                logo={styleSettings.logo}
               />
             )}
           />
@@ -58,6 +58,7 @@ const Index = () => {
           <Route exact path='/2' component={Page2} />
           <Route path='*' component={PageNotFound} />
         </Switch>
+        <Footer logo={styleSettings.logo} />
       </Router>
     </ThemeProvider>
   ) : (

@@ -14,6 +14,7 @@ export const Container = styled.div`
   left: 0;
   z-index: 1000;
   height: ${({ theme }) => theme.navHeight};
+  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.7);
 `;
 
 export const StyledLink = styled(Link)`
@@ -21,5 +22,7 @@ export const StyledLink = styled(Link)`
 `;
 
 export const Logo = styled.img`
-  height: 100%;
+  height: 85%;
+  border: 2px solid ${({ theme }) => theme.colors.darkBrown};
+  border-radius: 50%;
 `;

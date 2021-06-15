@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const ProductImg = styled.div`
-  width: 22rem;
+  width: 100%;
   height: 30rem;
   background-image: url(${({ mainImg }) => mainImg || ''});
   background-size: cover;
@@ -10,6 +10,7 @@ export const ProductImg = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius};
   transition: 0.5s;
   margin-bottom: 1.1rem;
+
 `;
 
 export const Product = styled(Link)`

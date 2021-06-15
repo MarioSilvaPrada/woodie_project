@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import * as S from './style';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams, useHistory } from 'react-router-dom';
 import Spinner from 'components/Spinner';
 import { getSingleProduct } from 'api/products';
 import Button from 'components/Button';
 import LazyImage from 'components/LazyImage';
+import { BsArrowLeft } from 'react-icons/bs';
 
 const ProductPage = () => {
   const location = useLocation();
+  const history = useHistory();
+  const { id } = useParams();
+
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const { id } = useParams();
+  console.log({ history });
 
   const getProduct = async () => {
     const res = await getSingleProduct(id);
@@ -45,6 +49,9 @@ const ProductPage = () => {
     <S.Container>
       <S.Wrapper>
         <S.SideWrapper>
+          <S.StyledLink onClick={() => history.goBack()}>
+            <BsArrowLeft />
+          </S.StyledLink>
           <S.TextWrapper>
             <S.MainTitle>{article.name}</S.MainTitle>
             <S.Price>{article.price}€</S.Price>

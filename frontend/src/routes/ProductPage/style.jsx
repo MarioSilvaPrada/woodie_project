@@ -60,6 +60,7 @@ export const SecondaryImages = styled.div`
 export const TextWrapper = styled.div`
   margin-right: 4rem;
   max-width: 30rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
 `;
 
@@ -77,4 +78,18 @@ export const SideWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+`;
+
+export const StyledLink = styled.button`
+  border-radius: 50%;
+  padding: 0.3rem;
+  border: 2px solid ${({ theme }) => theme.colors.darkBrown};
+  font-size: ${({ theme }) => theme.fontSize.L};
+  background: none;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    transform: translateX(-5px);
+  }
 `;
