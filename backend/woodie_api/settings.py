@@ -33,7 +33,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['woodi-backend.herokuapp.com',
                  'localhost', '127.0.0.1']
 
-CORS_ORIGIN_WHITELIST = ('http://localhost:9000')
+CORS_ORIGIN_WHITELIST = ('http://localhost:9000',
+                         'http://localhost:8000',
+                         'https://woodi-backend.herokuapp.com',)
 
 
 if DEBUG == 0:
