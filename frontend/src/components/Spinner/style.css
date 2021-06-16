@@ -4,10 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #efe4d0;
 }
 
 .loader {
-  color: #966c3b;
+  color: #1a1a1a;
   font-size: 20px;
   margin: 100px auto;
   width: 1em;

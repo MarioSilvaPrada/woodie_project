@@ -3,6 +3,7 @@ import * as S from './App.styled';
 
 import Button from 'components/Button';
 import GalleryRow from 'components/GalleryRow';
+import Services from 'components/Services';
 
 const App = ({ backImg, articles }) => {
   return (
@@ -20,6 +21,7 @@ const App = ({ backImg, articles }) => {
         </S.Wrapper>
       </S.Container>
       <GalleryRow articles={articles} />
+      <Services />
     </>
   );
 };

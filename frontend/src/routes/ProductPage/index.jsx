@@ -15,8 +15,6 @@ const ProductPage = () => {
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log({ history });
-
   const getProduct = async () => {
     const res = await getSingleProduct(id);
     setArticle(res);
