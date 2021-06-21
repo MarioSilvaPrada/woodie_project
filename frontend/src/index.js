@@ -7,7 +7,7 @@ import { getProducts } from 'api/products';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import App from './routes/App/App';
-import theme from './theme/';
+import theme from './theme';
 // Pages
 import Galeria from './routes/Galeria';
 import Page2 from './routes/Page2/Page';

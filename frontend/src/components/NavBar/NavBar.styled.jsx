@@ -22,7 +22,5 @@ export const StyledLink = styled(Link)`
 `;
 
 export const Logo = styled.img`
-  height: 85%;
-  border: 2px solid ${({ theme }) => theme.colors.darkBrown};
-  border-radius: 50%;
+  width: 5rem;
 `;
