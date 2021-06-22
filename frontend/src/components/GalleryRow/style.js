@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-  padding: ${({ theme }) => theme.siteMargin};
+  padding: ${({ theme }) => theme.dimensions.siteMargin};
 `;
 
 export const Header = styled.div`

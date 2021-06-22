@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.brown};
-  padding: ${({ theme }) => theme.siteMargin};
+  padding: ${({ theme }) => theme.dimensions.siteMargin};
   display: flex;
   justify-content: center;
 `;

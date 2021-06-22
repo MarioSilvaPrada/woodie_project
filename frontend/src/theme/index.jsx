@@ -1,6 +1,4 @@
 const theme = {
-  navHeight: '5rem',
-  siteMargin: '2rem',
   colors: {
     brown: '#efe4d0',
     darkBrown: '#1a1a1a',
@@ -11,6 +9,11 @@ const theme = {
     L: '1.8rem',
     XL: '3rem',
     XXL: '5rem',
+  },
+  dimensions: {
+    maxWidth: '2000px',
+    navHeight: '5rem',
+    siteMargin: '2rem',
   },
   borderRadius: '0.4rem',
 };
