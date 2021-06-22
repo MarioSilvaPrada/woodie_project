@@ -35,7 +35,7 @@ class Product(models.Model):
         null=True, blank=True, upload_to=recipe_image_file_path)
     image3 = models.ImageField(
         null=True, blank=True, upload_to=recipe_image_file_path)
-    destacar_produto = models.BooleanField(default=False)
+    destacar_produto = models.BooleanField(default=False, null=True)
 
     def __str__(self):
         return self.name
