@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 import os
+from django.core.validators import RegexValidator
 
 from colorfield.fields import ColorField
 
@@ -25,6 +26,9 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)
     description = models.CharField(max_length=255)
     main_image = models.ImageField(null=True, upload_to=recipe_image_file_path)
+    altura = models.DecimalField(max_digits=6, decimal_places=2)
+    largura = models.DecimalField(max_digits=6, decimal_places=2)
+    comprimento = models.DecimalField(max_digits=6, decimal_places=2)
     image1 = models.ImageField(
         null=True, blank=True, upload_to=recipe_image_file_path)
     image2 = models.ImageField(
@@ -54,9 +58,20 @@ class Reservas (models.Model):
     class Meta:
         verbose_name_plural = "Reservas"
 
+    phone_regex = RegexValidator(
+        regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in a valid format.")
+
     primeiro_nome = models.CharField(max_length=155)
     ultimo_nome = models.CharField(max_length=155)
     email = models.EmailField(max_length=255, unique=False)
-    contacto_telefonico = 
-    cidade = models.CharField(max_length=155)
+    contacto_telefonico = models.CharField(
+        validators=[phone_regex], max_length=17, blank=True)  # validators should be a list
+    cidade = models.CharField(max_length=155, blank=True)
     comentario = models.TextField()
+    produto = models.ForeignKey(
+        Product,
+        on_delete=models.PROTECT,
+    )
+
+    def __str__(self):
+        return f'{self.primeiro_nome} {self.ultimo_nome}'

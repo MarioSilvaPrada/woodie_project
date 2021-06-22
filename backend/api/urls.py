@@ -1,5 +1,6 @@
 from django.urls import path
 from products.views import ProductAPIView, SingleProductAPIView
+from reservations.views import CreateReservationView
 from style_settings.views import StyleSettingsAPIView
 
 
@@ -18,5 +19,6 @@ styleSettingsList = StyleSettingsAPIView.as_view({
 urlpatterns = [
     path('products/', productsList, name='all_products'),
     path('products/<int:pk>/', SingleProductAPIView.as_view(), name='detail_product'),
+    path('reservations/', CreateReservationView.as_view(), name='reservations'),
     path('style-settings/', styleSettingsList, name='all_style_settings'),
 ]

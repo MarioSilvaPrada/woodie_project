@@ -1,11 +1,24 @@
 from django.contrib import admin
 from core import models
 
+from core.models import Reservas
+
+
+class ReservasInline(admin.StackedInline):
+    model = Reservas
+    ordering = ('produto',)
+
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'price']
 
+    inlines = [ReservasInline]
+
+
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = ['produto', 'primeiro_nome', 'ultimo_nome', 'email']
+
 
 admin.site.register(models.Product, ProductAdmin)
-admin.site.register(models.Reservas)
+admin.site.register(models.Reservas, ReservationAdmin)
 admin.site.register(models.StyleSettings)
