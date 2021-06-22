@@ -1,8 +1,6 @@
 from django.db import models
 import uuid
 import os
-from django.db.models.signals import pre_delete
-from django.dispatch.dispatcher import receiver
 
 from colorfield.fields import ColorField
 
@@ -14,7 +12,7 @@ def settings_image(instance, filename):
     return os.path.join('images/site_settings/', filename)
 
 
-def recipe_image_file_path(instance, filename):
+def recipe_image_file_path(filename):
     """Generate file path for new recipe image"""
     ext = filename.split('.')[-1]
     filename = f'{uuid.uuid4()}.{ext}'
@@ -33,15 +31,7 @@ class Product(models.Model):
         null=True, blank=True, upload_to=recipe_image_file_path)
     image3 = models.ImageField(
         null=True, blank=True, upload_to=recipe_image_file_path)
-
-    def delete(self, *args, **kwargs):
-        print('delete!!')
-        # You have to prepare what you need before delete the model
-        storage, path = self.main_image.storage, self.main_image.path
-        # Delete the model before the file
-        super(Product, self).delete(*args, **kwargs)
-        # Delete the file after the model
-        storage.delete(path)
+    destacar_produto = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -58,3 +48,15 @@ class StyleSettings(models.Model):
 
     def __str__(self):
         return 'My Settings'
+
+
+class Reservas (models.Model):
+    class Meta:
+        verbose_name_plural = "Reservas"
+
+    primeiro_nome = models.CharField(max_length=155)
+    ultimo_nome = models.CharField(max_length=155)
+    email = models.EmailField(max_length=255, unique=False)
+    contacto_telefonico = 
+    cidade = models.CharField(max_length=155)
+    comentario = models.TextField()

@@ -71,6 +71,8 @@ INSTALLED_APPS = [
     'api',
     'core',
     'products',
+    'reservations',
+    'style_settings',
 ]
 
 MIDDLEWARE = [

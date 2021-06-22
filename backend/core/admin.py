@@ -7,4 +7,5 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 admin.site.register(models.Product, ProductAdmin)
+admin.site.register(models.Reservas)
 admin.site.register(models.StyleSettings)
