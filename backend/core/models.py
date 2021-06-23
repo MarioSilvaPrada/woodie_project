@@ -13,7 +13,7 @@ def settings_image(instance, filename):
     return os.path.join('images/site_settings/', filename)
 
 
-def recipe_image_file_path(filename):
+def recipe_image_file_path(instance, filename):
     """Generate file path for new recipe image"""
     ext = filename.split('.')[-1]
     filename = f'{uuid.uuid4()}.{ext}'
@@ -25,17 +25,17 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)
     description = models.CharField(max_length=255)
-    main_image = models.ImageField(null=True, upload_to=recipe_image_file_path)
     altura = models.DecimalField(max_digits=6, decimal_places=2)
     largura = models.DecimalField(max_digits=6, decimal_places=2)
     comprimento = models.DecimalField(max_digits=6, decimal_places=2)
+    main_image = models.ImageField(null=True, upload_to=recipe_image_file_path)
     image1 = models.ImageField(
         null=True, blank=True, upload_to=recipe_image_file_path)
     image2 = models.ImageField(
         null=True, blank=True, upload_to=recipe_image_file_path)
     image3 = models.ImageField(
         null=True, blank=True, upload_to=recipe_image_file_path)
-    destacar_produto = models.BooleanField(default=False, null=True)
+    destacar_produto = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
