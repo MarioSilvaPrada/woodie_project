@@ -93,3 +93,13 @@ export const StyledLink = styled.button`
     transform: translateX(-5px);
   }
 `;
+
+export const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Label = styled.label``;
+export const StyledInput = styled.input`
+  margin-bottom: 1.5rem;
+`;
