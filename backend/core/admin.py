@@ -7,11 +7,11 @@ from core.models import Reservas
 class ReservasInline(admin.StackedInline):
     model = Reservas
     ordering = ('produto',)
+    extra = 0
 
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'price']
-
     inlines = [ReservasInline]
 
 
