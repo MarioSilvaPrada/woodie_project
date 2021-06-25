@@ -4,7 +4,7 @@ import * as S from './style';
 const ProductCard = ({ article, noInfo, type }) => {
   return (
     <S.Product
-      type
+      type={type}
       to={{
         pathname: `artigo/${article.id}`,
         state: {

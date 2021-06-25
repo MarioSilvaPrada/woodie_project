@@ -43,17 +43,6 @@ const ProductPage = () => {
     setIsLoading(false);
   };
 
-  useEffect(() => {
-    if (location?.state?.article) {
-      setArticle(location.state.article);
-      setIsLoading(false);
-    } else {
-      //call api
-      getProduct();
-    }
-    setData('produto', id);
-  }, []);
-
   const getImageArray = () => {
     const imageArr = Array(article.image1, article.image2, article.image3);
     const arr = [];
@@ -64,6 +53,23 @@ const ProductPage = () => {
     }
     return arr;
   };
+
+  const createReservation = async () => {
+    const res = await postReservation(reservationData);
+
+    console.log({ res });
+  };
+
+  useEffect(() => {
+    if (location?.state?.article) {
+      setArticle(location.state.article);
+      setIsLoading(false);
+    } else {
+      //call api
+      getProduct();
+    }
+    setData('produto', id);
+  }, []);
 
   return !isLoading ? (
     <S.Container>
@@ -77,7 +83,7 @@ const ProductPage = () => {
             <S.Price>{article.price}€</S.Price>
             <p>{article.description}</p>
           </S.TextWrapper>
-          <Button to='#'>Reservar</Button>
+          <Button route='#'>Reservar</Button>
         </S.SideWrapper>
         <S.ImagesContainer>
           <LazyImage
@@ -111,7 +117,7 @@ const ProductPage = () => {
           <S.StyledInput name='cidade' onChange={handleChange} />
           <S.Label>Comentários</S.Label>
           <S.StyledInput name='comentario' onChange={handleChange} />
-          <div type='submit' onClick={() => console.log(reservationData)}>
+          <div type='submit' onClick={() => createReservation()}>
             Submit
           </div>
         </S.StyledForm>
