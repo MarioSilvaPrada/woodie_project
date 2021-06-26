@@ -35,13 +35,14 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
     setError(null);
     const res = await postReservation(reservationData);
 
-    console.log({ res });
-
     if (res.status === 400) {
       setError(res.data);
     }
 
+    console.log('corre');
+
     if (res.status === 201) {
+      console.log('201!!!');
       setReservationData(initialData); //?????
     }
   };

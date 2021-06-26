@@ -6,7 +6,8 @@ import Modal from 'components/Modal';
 import ReservationForm from 'components/ReservationForm';
 import { getSingleProduct } from 'api/products';
 import Button from 'components/Button';
-import LazyImage from 'components/LazyImage';
+import Button from 'components/Button';
+import Layout from 'components/Layout';
 import { BsArrowLeft } from 'react-icons/bs';
 
 const ProductPage = () => {
@@ -43,11 +44,10 @@ const ProductPage = () => {
       //call api
       getProduct();
     }
-    window.scrollTo(0, 0);
   }, []);
 
   return !isLoading ? (
-    <S.Container>
+    <Layout>
       <S.Wrapper>
         <S.SideWrapper>
           <S.StyledLink onClick={() => history.goBack()}>
@@ -90,7 +90,7 @@ const ProductPage = () => {
       >
         <ReservationForm productId={id} />
       </Modal>
-    </S.Container>
+    </Layout>
   ) : (
     <Spinner />
   );
