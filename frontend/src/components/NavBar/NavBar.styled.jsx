@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   padding: 0rem 2rem;
-  background: ${({ theme }) => theme.colors.brown};
-  color: ${({ theme }) => theme.colors.darkBrown};
+  background: ${({ theme }) => theme.colors.main};
+  color: ${({ theme }) => theme.colors.secondary};
   position: fixed;
   top: 0;
   right: 0;

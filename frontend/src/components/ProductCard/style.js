@@ -3,21 +3,19 @@ import { Link } from 'react-router-dom';
 
 export const ProductImg = styled.div`
   width: 100%;
+  height: 100%;
   height: 30rem;
   background-image: url(${({ mainImg }) => mainImg || ''});
   background-size: cover;
   background-position: center;
   border-radius: ${({ theme }) => theme.borderRadius};
   transition: 0.5s;
-  margin-bottom: 1.1rem;
-
 `;
 
 export const Product = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ${({ type }) => (type ? 0 : '1rem')};
 
   &:hover {
     ${ProductImg} {
@@ -31,8 +29,8 @@ export const ProductTitle = styled.p`
 `;
 
 export const StyledPrice = styled.p`
-  color: ${({ theme }) => theme.colors.darkBrown};;
-  background: ${({ theme }) => theme.colors.brown};
+  color: ${({ theme }) => theme.colors.secondary};
+  background: ${({ theme }) => theme.colors.main};
   padding: 0.5rem 0.7rem;
   border-radius: ${({ theme }) => theme.borderRadius};
 `;

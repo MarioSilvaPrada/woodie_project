@@ -70,7 +70,7 @@ export const MainTitle = styled.h1`
 `;
 
 export const Price = styled.h2`
-  color: ${({ theme }) => theme.colors.darkBrown};
+  color: ${({ theme }) => theme.colors.secondary};
   margin-bottom: 0.7rem;
 `;
 
@@ -83,7 +83,7 @@ export const SideWrapper = styled.div`
 export const StyledLink = styled.button`
   border-radius: 50%;
   padding: 0.3rem;
-  border: 2px solid ${({ theme }) => theme.colors.darkBrown};
+  border: 2px solid ${({ theme }) => theme.colors.secondary};
   font-size: ${({ theme }) => theme.fontSize.L};
   background: none;
   cursor: pointer;
@@ -92,14 +92,4 @@ export const StyledLink = styled.button`
   &:hover {
     transform: translateX(-5px);
   }
-`;
-
-export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Label = styled.label``;
-export const StyledInput = styled.input`
-  margin-bottom: 1.5rem;
 `;

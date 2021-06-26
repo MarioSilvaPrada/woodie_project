@@ -7,9 +7,23 @@ const postReservation = async (params) => {
     if (res.status === 201) {
       return res;
     }
+
+    return res;
   } catch (err) {
     return err.response;
   }
 };
 
-export { postReservation };
+const getReservationOptions = async () => {
+  try {
+    const res = await api.options(process.env.RESERVATIONS);
+
+    if (res.status === 200) {
+      return res.data.actions.POST;
+    }
+  } catch (err) {
+    return err.response;
+  }
+};
+
+export { postReservation, getReservationOptions };

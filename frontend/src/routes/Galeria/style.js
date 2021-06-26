@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  height: 100%;
-  margin: 0 auto;
-  max-width: ${({ theme }) => theme.dimensions.maxWidth}
+  min-height: 100%;
+  margin: 0 auto 5rem;
+  max-width: ${({ theme }) => theme.dimensions.maxWidth};
 `;
 
 export const Title = styled.h1`

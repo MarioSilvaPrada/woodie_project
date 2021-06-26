@@ -63,12 +63,13 @@ class Reservas (models.Model):
         regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in a valid format.")
 
     primeiro_nome = models.CharField(max_length=155)
-    ultimo_nome = models.CharField(max_length=155)
-    email = models.EmailField(max_length=255, unique=False)
+    ultimo_nome = models.CharField(max_length=155, verbose_name='Último nome')
+    email = models.EmailField(
+        max_length=255, unique=False, verbose_name='E-mail')
     contacto_telefonico = models.CharField(
-        validators=[phone_regex], max_length=17, blank=True)  # validators should be a list
+        validators=[phone_regex], max_length=17, blank=True, verbose_name='Contacto telefónico')  # validators should be a list
     cidade = models.CharField(max_length=155, blank=True)
-    comentario = models.TextField()
+    comentario = models.TextField(blank=True, verbose_name='Comentário')
     produto = models.ForeignKey(
         Product,
         on_delete=models.PROTECT,

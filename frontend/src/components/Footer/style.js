@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: ${({ theme }) => theme.colors.brown};
+  background: ${({ theme }) => theme.colors.main};
   padding: ${({ theme }) => theme.dimensions.siteMargin};
   display: flex;
   justify-content: center;

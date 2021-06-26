@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-  padding: ${({ theme }) => theme.dimensions.siteMargin};
+  max-width: ${({ theme }) => theme.dimensions.maxWidth};
+  margin: 0 auto;
 `;
 
 export const Header = styled.div`
@@ -13,10 +14,10 @@ export const Header = styled.div`
 `;
 
 export const StyledLink = styled(Link)`
-  border-bottom: 2px solid ${({ theme }) => theme.colors.brown};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.main};
   font-size: ${({ theme }) => theme.fontSize.M};
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.darkBrown};
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const ProductsWrapper = styled.div`
@@ -28,12 +29,8 @@ export const ProductsWrapper = styled.div`
   a {
     width: 22rem;
   }
-
-  a:not(:last-child) {
-    margin-right: 2rem;
-  }
 `;
 
 export const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.darkBrown};
+  color: ${({ theme }) => theme.colors.secondary};
 `;

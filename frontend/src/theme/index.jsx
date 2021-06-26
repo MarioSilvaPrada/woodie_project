@@ -1,7 +1,8 @@
 const theme = {
   colors: {
-    brown: '#efe4d0',
-    darkBrown: '#1a1a1a',
+    main: '#efe4d0',
+    secondary: '#1a1a1a',
+    error: '#D83A56',
   },
   fontSize: {
     S: '.8rem',
@@ -10,8 +11,12 @@ const theme = {
     XL: '3rem',
     XXL: '5rem',
   },
+  fontFamily: {
+    text: `'Poppins', sans-serif`,
+    header: `'Noto Serif', serif`,
+  },
   dimensions: {
-    maxWidth: '2000px',
+    maxWidth: '1500px',
     navHeight: '5rem',
     siteMargin: '2rem',
   },
