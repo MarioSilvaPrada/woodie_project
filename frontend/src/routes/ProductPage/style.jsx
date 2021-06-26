@@ -93,3 +93,18 @@ export const StyledLink = styled.button`
     transform: translateX(-5px);
   }
 `;
+
+export const DimensionsWrapper = styled.div`
+  margin-top: 1.2rem;
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+
+export const DimTitle = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.M};
+  margin-bottom: 0.5rem;
+`;
+
+export const Dim = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.S};
+  margin-bottom: 0.2rem;
+`;

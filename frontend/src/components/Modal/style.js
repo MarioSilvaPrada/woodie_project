@@ -48,7 +48,10 @@ export const CloseWrapper = styled.div`
   color: ${({ theme }) => theme.colors.error};
   font-size: 3rem;
   margin-bottom: 0.5rem;
-  cursor: pointer;
   display: flex;
   justify-content: flex-end;
+
+  svg {
+    cursor: pointer;
+  }
 `;

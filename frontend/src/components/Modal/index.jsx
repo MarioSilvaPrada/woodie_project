@@ -8,8 +8,8 @@ const Modal = ({ children, isVisible, onClose }) => {
       <S.ModalBackground>
         <S.ModalWrapper isVisible={isVisible}>
           <>
-            <S.CloseWrapper onClick={onClose}>
-              <IoIosClose />
+            <S.CloseWrapper>
+              <IoIosClose onClick={onClose} />
             </S.CloseWrapper>
             {children}
           </>

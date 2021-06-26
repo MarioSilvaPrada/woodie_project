@@ -6,6 +6,9 @@ import GalleryRow from 'components/GalleryRow';
 import Services from 'components/Services';
 
 const App = ({ backImg, articles }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <S.Container backImage={backImg}>

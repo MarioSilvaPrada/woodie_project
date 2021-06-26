@@ -7,8 +7,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   margin-top: calc(${({ theme }) => theme.dimensions.navHeight} + 2rem);
+  font-size: ${({ theme }) => theme.fontSize.XL};
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const StyledGrid = styled.div`

@@ -43,6 +43,7 @@ const ProductPage = () => {
       //call api
       getProduct();
     }
+    window.scrollTo(0, 0);
   }, []);
 
   return !isLoading ? (
@@ -56,6 +57,12 @@ const ProductPage = () => {
             <S.MainTitle>{article.name}</S.MainTitle>
             <S.Price>{article.price}€</S.Price>
             <p>{article.description}</p>
+            <S.DimensionsWrapper>
+              <S.DimTitle>Dimensões:</S.DimTitle>
+              <S.Dim>Altura: {article.altura} cm</S.Dim>
+              <S.Dim>Comprimento: {article.comprimento} cm</S.Dim>
+              <S.Dim>Largura: {article.largura} cm</S.Dim>
+            </S.DimensionsWrapper>
           </S.TextWrapper>
           <Button onClick={() => setIsModalVisible(true)}>Reservar</Button>
         </S.SideWrapper>

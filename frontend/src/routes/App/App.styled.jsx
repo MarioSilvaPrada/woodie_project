@@ -15,6 +15,7 @@ export const Container = styled.div`
   justify-content: center;
   position: relative;
   margin-top: ${({ theme }) => theme.dimensions.navHeight};
+  margin-bottom: 5rem;
 `;
 
 export const MainTitle = styled.h1`

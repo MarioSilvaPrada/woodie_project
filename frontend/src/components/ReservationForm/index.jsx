@@ -6,7 +6,7 @@ import Input from 'components/Input';
 import { postReservation, getReservationOptions } from 'api/reservations';
 
 const ReservationForm = ({ onSubmit, productId, ...props }) => {
-  const [reservationData, setReservationData] = useState({
+  const initialData = {
     primeiro_nome: '',
     ultimo_nome: '',
     email: '',
@@ -14,7 +14,8 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
     cidade: '',
     comentario: '',
     produto: null,
-  });
+  };
+  const [reservationData, setReservationData] = useState(initialData);
 
   const [options, setOptions] = useState(null);
   const [error, setError] = useState(null);
@@ -30,8 +31,8 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
   };
 
   const createReservation = async (e) => {
-    console.log(reservationData);
     e.preventDefault();
+    setError(null);
     const res = await postReservation(reservationData);
 
     console.log({ res });
@@ -39,12 +40,14 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
     if (res.status === 400) {
       setError(res.data);
     }
+
+    if (res.status === 201) {
+      setReservationData(initialData); //?????
+    }
   };
 
   const getOptions = async () => {
     const res = await getReservationOptions();
-
-    console.log({ options: res });
     setOptions(res);
   };
 

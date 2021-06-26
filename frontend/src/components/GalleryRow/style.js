@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   max-width: ${({ theme }) => theme.dimensions.maxWidth};
-  margin: 0 auto;
+  margin: 0 auto 5rem;
 `;
 
 export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
 `;
 
 export const StyledLink = styled(Link)`
@@ -29,8 +28,14 @@ export const ProductsWrapper = styled.div`
   a {
     width: 22rem;
   }
+
+  a:not(:last-child) {
+    margin-right: 2rem;
+  }
 `;
 
 export const Title = styled.h1`
+  font-size: ${({ theme }) => theme.fontSize.XL};
+  margin-bottom: 2rem;
   color: ${({ theme }) => theme.colors.secondary};
 `;
