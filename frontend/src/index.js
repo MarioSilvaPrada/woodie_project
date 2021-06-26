@@ -6,13 +6,15 @@ import { getProducts } from 'api/products';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import App from './routes/App/App';
 import theme from './theme';
 // Pages
+import App from './routes/App/App';
 import Galeria from './routes/Galeria';
-import Page2 from './routes/Page2/Page';
+import Sobre from './routes/Sobre';
+import Contactos from './routes/Contactos';
 import ProductPage from './routes/ProductPage';
 import PageNotFound from './routes/PageNotFound/PageNotFound';
+// Components
 import NavBar from 'components/NavBar/NavBar';
 import Spinner from 'components/Spinner';
 import Footer from 'components/Footer';
@@ -57,7 +59,8 @@ const Index = () => {
             component={() => <Galeria articles={articles} />}
           />
           <Route exact path='/artigo/:id' component={ProductPage} />
-          <Route exact path='/2' component={Page2} />
+          <Route exact path='/sobre' component={Sobre} />
+          <Route exact path='/contactos' component={Contactos} />
           <Route path='*' component={PageNotFound} />
         </Switch>
         <Footer logo={styleSettings.logo} />

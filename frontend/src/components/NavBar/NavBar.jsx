@@ -10,8 +10,8 @@ const NavBar = ({ logo, articles }) => (
       </Link>
       <div>
         <S.StyledLink to={'/galeria'}>Galeria</S.StyledLink>
-        <S.StyledLink to='/2'>Sobre</S.StyledLink>
-        <S.StyledLink to='/'>Contactos</S.StyledLink>
+        <S.StyledLink to='/sobre'>Sobre</S.StyledLink>
+        <S.StyledLink to='/contactos'>Contactos</S.StyledLink>
       </div>
     </S.ItemsWrapper>
   </S.Container>
