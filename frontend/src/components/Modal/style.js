@@ -1,27 +1,13 @@
 import styled, { keyframes } from 'styled-components';
 
 const bounce = keyframes`
-  from {
-    opacity: 0;
-    transform: translate3d(0, 3000px, 0) scaleY(5);
-  }
+    from {
+      opacity: 0;
+    }
 
-  60% {
-    opacity: 1;
-    transform: translate3d(0, -20px, 0) scaleY(0.9);
-  }
-
-  75% {
-    transform: translate3d(0, 10px, 0) scaleY(0.95);
-  }
-
-  90% {
-    transform: translate3d(0, -5px, 0) scaleY(0.985);
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
+    to {
+      opacity: 1;
+    }
 `;
 
 export const ModalBackground = styled.div`
@@ -41,7 +27,7 @@ export const ModalWrapper = styled.div`
   padding: 2rem;
   background: white;
   border-radius: ${({ theme }) => theme.borderRadius};
-  animation: 0.5s ${bounce} linear;
+  animation: 0.4s ${bounce} linear;
 `;
 
 export const CloseWrapper = styled.div`

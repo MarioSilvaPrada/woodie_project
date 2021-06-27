@@ -14,11 +14,15 @@ export const ContentWrapper = styled.div`
   align-items: center;
 `;
 
-export const StyledImg = styled.img`
+export const StyledImg = styled.div`
   width: 40rem;
-  border-radius: ${({ theme }) => theme.borderRadius}; ;
+  height: 40rem;
+  border-radius: 50%;
+  background-image: url(${({ src }) => src});
+  background-position: center;
 `;
 
 export const Paragraph = styled.p`
-  margin-right: 5rem;
+  margin-right 5rem;
+  max-width: 50%;
 `;

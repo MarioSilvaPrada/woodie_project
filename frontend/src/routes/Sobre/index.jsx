@@ -17,7 +17,7 @@ const Sobre = () => (
       </S.Paragraph>
       <S.StyledImg
         src={
-          'https://images.pexels.com/photos/459654/pexels-photo-459654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+          'https://images.pexels.com/photos/461049/pexels-photo-461049.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
         }
       />
     </S.ContentWrapper>
