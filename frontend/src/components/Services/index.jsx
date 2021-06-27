@@ -8,7 +8,11 @@ const Services = ({ article, noInfo, type }) => {
     <S.Container>
       <S.Title>Os nossos serviços</S.Title>
       {content.services.map((content, i) => (
-        <ServicesRow content={content} isOdd={i % 2 !== 0} />
+        <ServicesRow
+          key={content.title}
+          content={content}
+          isOdd={i % 2 !== 0}
+        />
       ))}
     </S.Container>
   );

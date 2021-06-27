@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './style';
-import { IoIosClose } from 'react-icons/io';
+import { FiX } from 'react-icons/fi';
 
 const Modal = ({ children, isVisible, onClose }) => {
   return (
@@ -9,7 +9,7 @@ const Modal = ({ children, isVisible, onClose }) => {
         <S.ModalWrapper isVisible={isVisible}>
           <>
             <S.CloseWrapper>
-              <IoIosClose onClick={onClose} />
+              <FiX onClick={onClose} />
             </S.CloseWrapper>
             {children}
           </>

@@ -29,7 +29,7 @@ const Index = () => {
     const res = await getSettings();
     const myProducts = await getProducts();
 
-    console.log({ myProducts });
+    console.table(myProducts);
 
     setStyleSettings(res[0]);
     setArticles(myProducts);

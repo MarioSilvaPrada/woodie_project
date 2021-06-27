@@ -4,7 +4,7 @@ export const Container = styled.div`
   padding-top: ${({ theme }) => theme.dimensions.navHeight};
   min-height: 90vh;
   max-width: ${({ theme }) => theme.dimensions.maxWidth};
-  margin: 0 auto 5rem;
+  margin: 3rem auto;
 `;
 
 export const StyledTitle = styled.h1`

@@ -46,7 +46,7 @@ export const ModalWrapper = styled.div`
 
 export const CloseWrapper = styled.div`
   color: ${({ theme }) => theme.colors.error};
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
   display: flex;
   justify-content: flex-end;

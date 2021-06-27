@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import * as S from './style';
 
 import Input from 'components/Input';
+import Success from './Success';
 
 import { postReservation, getReservationOptions } from 'api/reservations';
 
@@ -19,6 +20,7 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
 
   const [options, setOptions] = useState(null);
   const [error, setError] = useState(null);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const setData = (type, value) => {
     const obj = { ...reservationData };
@@ -26,7 +28,7 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
     setReservationData(obj);
   };
 
-  const handleChange = ({ target, valie }) => {
+  const handleChange = ({ target }) => {
     setData(target.name, target.value);
   };
 
@@ -39,11 +41,9 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
       setError(res.data);
     }
 
-    console.log('corre');
-
     if (res.status === 201) {
-      console.log('201!!!');
-      setReservationData(initialData); //?????
+      setReservationData(initialData);
+      setIsSuccess(true);
     }
   };
 
@@ -52,13 +52,8 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
     setOptions(res);
   };
 
-  useEffect(() => {
-    setData('produto', productId);
-    getOptions();
-  }, []);
-
-  return (
-    options && (
+  const getModalContent = () => {
+    return !isSuccess ? (
       <S.StyledForm>
         <S.InputsWrapper>
           <S.NameWrapper>
@@ -67,6 +62,7 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
               name='primeiro_nome'
               onChange={handleChange}
               error={error?.primeiro_nome}
+              value={reservationData['primeiro_nome']}
               isRequired
             />
             <Input
@@ -74,6 +70,7 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
               name='ultimo_nome'
               onChange={handleChange}
               error={error?.ultimo_nome}
+              value={reservationData['ultimo_nome']}
               isRequired
             />
           </S.NameWrapper>
@@ -91,6 +88,7 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
                   name={key}
                   type={key === 'comentario' ? 'textarea' : ''}
                   onChange={handleChange}
+                  value={reservationData[key]}
                   isRequired={values.required}
                   error={error && error[key]}
                 />
@@ -98,10 +96,19 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
             }
           })}
         </S.InputsWrapper>
-        <S.SubmitBtn onClick={(e) => createReservation(e)}>Enviar</S.SubmitBtn>
+        <S.SubmitBtn onClick={(e) => createReservation(e)}>Reservar</S.SubmitBtn>
       </S.StyledForm>
-    )
-  );
+    ) : (
+      <Success />
+    );
+  };
+
+  useEffect(() => {
+    setData('produto', productId);
+    getOptions();
+  }, []);
+
+  return options && getModalContent();
 };
 
 export default ReservationForm;

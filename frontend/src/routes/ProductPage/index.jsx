@@ -6,7 +6,7 @@ import Modal from 'components/Modal';
 import ReservationForm from 'components/ReservationForm';
 import { getSingleProduct } from 'api/products';
 import Button from 'components/Button';
-import Button from 'components/Button';
+import LazyImage from 'components/LazyImage';
 import Layout from 'components/Layout';
 import { BsArrowLeft } from 'react-icons/bs';
 
