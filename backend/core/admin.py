@@ -1,11 +1,9 @@
 from django.contrib import admin
 from core import models
 
-from core.models import Reservas
-
 
 class ReservasInline(admin.StackedInline):
-    model = Reservas
+    model = models.Reservas
     ordering = ('produto',)
     extra = 0
 

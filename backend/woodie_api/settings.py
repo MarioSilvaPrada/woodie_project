@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     'products',
     'reservations',
     'style_settings',
+    'subscribers',
 ]
 
 MIDDLEWARE = [

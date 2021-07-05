@@ -81,8 +81,9 @@ class Reservas (models.Model):
         return f'{self.primeiro_nome} {self.ultimo_nome}'
 
 
-class Subscribers (models.Model):
+class Subscribers(models.Model):
     class Meta:
         verbose_name_plural = "Subscrições"
-        
+
+    name = models.CharField(max_length=155)
     email = models.EmailField(max_length=255, unique=True)
