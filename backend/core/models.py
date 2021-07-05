@@ -22,6 +22,8 @@ def recipe_image_file_path(instance, filename):
 
 
 class Product(models.Model):
+    class Meta:
+        verbose_name_plural = "Produtos"
 
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)
@@ -44,7 +46,7 @@ class Product(models.Model):
 
 class StyleSettings(models.Model):
     class Meta:
-        verbose_name_plural = "style settings"
+        verbose_name_plural = "Configurações gerais"
 
     logo = models.ImageField(null=True, upload_to=settings_image)
     main_background = models.ImageField(
@@ -77,3 +79,10 @@ class Reservas (models.Model):
 
     def __str__(self):
         return f'{self.primeiro_nome} {self.ultimo_nome}'
+
+
+class Subscribers (models.Model):
+    class Meta:
+        verbose_name_plural = "Subscrições"
+        
+    email = models.EmailField(max_length=255, unique=True)

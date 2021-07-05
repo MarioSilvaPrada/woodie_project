@@ -22,3 +22,4 @@ class ReservationAdmin(admin.ModelAdmin):
 admin.site.register(models.Product, ProductAdmin)
 admin.site.register(models.Reservas, ReservationAdmin)
 admin.site.register(models.StyleSettings)
+admin.site.register(models.Subscribers)
