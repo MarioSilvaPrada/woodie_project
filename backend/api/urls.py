@@ -22,5 +22,5 @@ urlpatterns = [
     path('products/<int:pk>/', SingleProductAPIView.as_view(), name='detail_product'),
     path('reservations/', CreateReservationView.as_view(), name='reservations'),
     path('style-settings/', styleSettingsList, name='all_style_settings'),
-    path('subscribe/', ListCreateSubscriber.as_view(), name='all_style_settings'),
+    # path('subscribe/', ListCreateSubscriber.as_view(), name='subscriptions'),
 ]
