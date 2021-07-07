@@ -4,6 +4,7 @@ import * as S from './App.styled';
 import Button from 'components/Button';
 import GalleryRow from 'components/GalleryRow';
 import Services from 'components/Services';
+import SubscriptionBar from 'components/SubscriptionBar';
 
 const App = ({ backImg, articles }) => {
   useEffect(() => {
@@ -25,6 +26,7 @@ const App = ({ backImg, articles }) => {
       </S.Container>
       <GalleryRow articles={articles} />
       <Services />
+      <SubscriptionBar />
     </>
   );
 };
