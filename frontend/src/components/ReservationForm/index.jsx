@@ -49,6 +49,7 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
 
   const getOptions = async () => {
     const res = await getReservationOptions();
+    console.log({ res });
     setOptions(res);
   };
 
@@ -96,7 +97,9 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
             }
           })}
         </S.InputsWrapper>
-        <S.SubmitBtn onClick={(e) => createReservation(e)}>Reservar</S.SubmitBtn>
+        <S.SubmitBtn onClick={(e) => createReservation(e)}>
+          Reservar
+        </S.SubmitBtn>
       </S.StyledForm>
     ) : (
       <Success />

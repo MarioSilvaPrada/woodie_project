@@ -16,6 +16,7 @@ const postReservation = async (params) => {
 
 const getReservationOptions = async () => {
   try {
+    console.log(process.env.RESERVATIONS);
     const res = await api.options(process.env.RESERVATIONS);
 
     if (res.status === 200) {
