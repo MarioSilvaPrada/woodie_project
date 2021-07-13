@@ -24,7 +24,7 @@ export const ProductsWrapper = styled.div`
   align-items: center;
   overflow-x: scroll;
   padding: 1rem;
-
+  margin: 0 -1rem;
   a {
     width: 22rem;
   }
@@ -33,6 +33,8 @@ export const ProductsWrapper = styled.div`
     margin-right: 2rem;
   }
 `;
+
+export const ScrollBar = styled.div``;
 
 export const Title = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.XL};
