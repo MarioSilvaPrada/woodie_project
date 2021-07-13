@@ -10,7 +10,7 @@ import LazyImage from 'components/LazyImage';
 import Layout from 'components/Layout';
 import { BsArrowLeft } from 'react-icons/bs';
 
-const ProductPage = () => {
+const ProductPage = ({ options }) => {
   const location = useLocation();
   const history = useHistory();
   const { id } = useParams();
@@ -88,7 +88,7 @@ const ProductPage = () => {
         isVisible={isModalVisible}
         onClose={() => setIsModalVisible(false)}
       >
-        <ReservationForm productId={id} />
+        <ReservationForm productId={id} options={options} />
       </Modal>
     </Layout>
   ) : (

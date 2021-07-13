@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 import { getSettings } from 'api/settings';
 import { getProducts } from 'api/products';
+import { getReservationOptions } from 'api/reservations';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
@@ -22,17 +23,19 @@ import Footer from 'components/Footer';
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [styleSettings, setStyleSettings] = useState({});
+  const [options, setOptions] = useState(null);
 
   const [articles, setArticles] = useState([]);
 
   const fetchData = async () => {
     const res = await getSettings();
     const myProducts = await getProducts();
-
-    console.table(myProducts);
+    const myOptions = await getReservationOptions();
 
     setStyleSettings(res[0]);
     setArticles(myProducts);
+    setOptions(myOptions);
+
     setIsLoading(false);
   };
   useEffect(() => {
@@ -58,7 +61,11 @@ const Index = () => {
             path='/galeria'
             component={() => <Galeria articles={articles} />}
           />
-          <Route exact path='/artigo/:id' component={ProductPage} />
+          <Route
+            exact
+            path='/artigo/:id'
+            component={() => <ProductPage options={options} />}
+          />
           <Route exact path='/sobre' component={Sobre} />
           <Route exact path='/contactos' component={Contactos} />
           <Route path='*' component={PageNotFound} />

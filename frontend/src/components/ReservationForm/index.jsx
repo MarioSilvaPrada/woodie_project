@@ -6,7 +6,7 @@ import Success from './Success';
 
 import { postReservation, getReservationOptions } from 'api/reservations';
 
-const ReservationForm = ({ onSubmit, productId, ...props }) => {
+const ReservationForm = ({ onSubmit, productId, options, ...props }) => {
   const initialData = {
     primeiro_nome: '',
     ultimo_nome: '',
@@ -18,7 +18,6 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
   };
   const [reservationData, setReservationData] = useState(initialData);
 
-  const [options, setOptions] = useState(null);
   const [error, setError] = useState(null);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -45,12 +44,6 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
       setReservationData(initialData);
       setIsSuccess(true);
     }
-  };
-
-  const getOptions = async () => {
-    const res = await getReservationOptions();
-    console.log({ res });
-    setOptions(res);
   };
 
   const getModalContent = () => {
@@ -108,7 +101,6 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
 
   useEffect(() => {
     setData('produto', productId);
-    getOptions();
   }, []);
 
   return options && getModalContent();
