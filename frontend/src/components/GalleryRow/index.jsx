@@ -14,7 +14,13 @@ const GalleryRow = ({ articles }) => {
       <S.ProductsWrapper>
         {articles.map((article) => {
           if (article.destacar_produto) {
-            return <ProductCard key={article.id} article={article} />;
+            return (
+              <ProductCard
+                key={article.id}
+                article={article}
+                cardWidth='22rem'
+              />
+            );
           }
         })}
       </S.ProductsWrapper>
