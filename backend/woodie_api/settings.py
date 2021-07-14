@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['woodi-backend.herokuapp.com',
 
 CORS_ORIGIN_WHITELIST = ('http://localhost:9000',
                          'http://localhost:8000',
-                         'https://woodi-backend.herokuapp.com',)
+                         'https://mystifying-carson-cd65e2.netlify.app')
 
 
 if DEBUG == 0:
