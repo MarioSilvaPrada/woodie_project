@@ -22,7 +22,7 @@ export const StyledLink = styled(Link)`
 export const ProductsWrapper = styled.div`
   display: flex;
   align-items: center;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 1rem;
   margin: 0 -1rem;
 
