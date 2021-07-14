@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+const marginSide = '5rem';
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
@@ -15,7 +17,8 @@ export const StyledImage = styled.img`
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: ${({ isOdd }) => (isOdd ? '0 0 0 3rem' : '0 3rem 0 0')}; ;
+  margin: ${({ isOdd }) =>
+    isOdd ? `0 0 0 ${marginSide}` : `0 ${marginSide} 0 0`};
 `;
 
 export const RowTitle = styled.h1`
