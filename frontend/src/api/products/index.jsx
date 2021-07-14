@@ -2,7 +2,7 @@ import api from 'api';
 
 const getProducts = async () => {
   try {
-    const res = await api.get(process.env.PRODUCTS);
+    const res = await api.get('api/products/');
 
     if (res.status === 200) {
       return res.data;
@@ -14,7 +14,7 @@ const getProducts = async () => {
 
 const getSingleProduct = async (id) => {
   try {
-    const res = await api.get(`${process.env.PRODUCTS}${id}`);
+    const res = await api.get(`api/products/${id}`);
 
     if (res.status === 200) {
       return res.data;
