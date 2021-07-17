@@ -31,14 +31,12 @@ export const TitleWrapper = styled.div`
   }
 `;
 
-export const Form = styled.form`
-  position: relative;
-`;
+export const Form = styled.form``;
 
 export const StyledInput = styled.input`
   padding: 0.7rem 8.5rem 0.7rem 1rem;
   border-radius: ${({ theme }) => theme.borderRadius};
-  border: 1px solid ${({ theme }) => theme.colors.main};
+  border: none;
   width: 100%;
 `;
 
@@ -54,4 +52,17 @@ export const Submit = styled.input`
   padding: 0.5rem;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   width: 8rem;
+`;
+
+export const InputWrapper = styled.div`
+  position: relative;
+  margin-top: 1rem;
+`;
+
+export const Error = styled.span`
+  color: ${({ theme }) => theme.colors.error};
+  font-size: ${({ theme }) => theme.fontSize.S};
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  display: block;
 `;

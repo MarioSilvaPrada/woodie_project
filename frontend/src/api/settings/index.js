@@ -7,7 +7,7 @@ const getSettings = async () => {
       return res.data;
     }
   } catch (err) {
-    console.log(err.response);
+    return err.response;
   }
 };
 export { getSettings };

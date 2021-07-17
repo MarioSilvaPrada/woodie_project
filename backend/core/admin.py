@@ -16,8 +16,11 @@ class ProductAdmin(admin.ModelAdmin):
 class ReservationAdmin(admin.ModelAdmin):
     list_display = ['produto', 'primeiro_nome', 'ultimo_nome', 'email']
 
+class SubscriptionAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email']
+
 
 admin.site.register(models.Product, ProductAdmin)
 admin.site.register(models.Reservas, ReservationAdmin)
 admin.site.register(models.StyleSettings)
-admin.site.register(models.Subscribers)
+admin.site.register(models.Subscribers, SubscriptionAdmin)
