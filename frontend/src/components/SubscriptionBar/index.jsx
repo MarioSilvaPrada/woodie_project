@@ -27,12 +27,18 @@ const SubscriptionBar = ({ noMarginBottom }) => {
     const { status, data } = res;
 
     if (status === 201) {
+      setName('');
+      setUserEmail('');
+      setError({
+        name: '',
+        email: '',
+      });
       setIsSubscribed(true);
+      setTimeout(() => setIsSubscribed(false), 5000);
       return;
     }
 
     if (status === 400) {
-      console.log({ data });
       setError(data);
       return;
     }
@@ -61,10 +67,13 @@ const SubscriptionBar = ({ noMarginBottom }) => {
               onChange={({ target }) => setUserEmail(target.value)}
             />
 
-            <S.Submit type='submit' value='Subscrever' />
+            <S.Submit type='submit' value='Subscrever' isValid={isSubscribed} />
           </S.InputWrapper>
           <S.Error>{error.email}</S.Error>
         </S.Form>
+        {isSubscribed && (
+          <S.SuccessText>Obrigado pela sua subscrição!</S.SuccessText>
+        )}
       </S.MainWrapper>
     </S.Container>
   );

@@ -47,11 +47,13 @@ export const Submit = styled.input`
   height: 90%;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
-  background: ${({ theme }) => theme.colors.main};
+  background: ${({ theme, isValid }) =>
+    isValid ? theme.colors.success : theme.colors.main};
   border-radius: ${({ theme }) => theme.borderRadius};
   padding: 0.5rem;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   width: 8rem;
+  transition: 0.6s;
 `;
 
 export const InputWrapper = styled.div`
@@ -65,4 +67,10 @@ export const Error = styled.span`
   margin-top: 0.5rem;
   margin-left: 1rem;
   display: block;
+`;
+
+export const SuccessText = styled.p`
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.colors.success};
+  text-align: center;
 `;

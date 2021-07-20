@@ -3,6 +3,7 @@ const theme = {
     main: '#efe4d0',
     secondary: '#1a1a1a',
     error: '#D83A56',
+    success: '#29BB89',
   },
   fontSize: {
     S: '.8rem',
