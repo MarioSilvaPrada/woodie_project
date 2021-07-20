@@ -84,6 +84,10 @@ const ReservationForm = ({ onSubmit, productId, options, ...props }) => {
                   onChange={handleChange}
                   value={reservationData[key]}
                   isRequired={values.required}
+                  additionalInfo={
+                    key === 'cidade' &&
+                    '(Entregas gratuitas na região de Lisboa.)'
+                  }
                   error={error && error[key]}
                 />
               );
