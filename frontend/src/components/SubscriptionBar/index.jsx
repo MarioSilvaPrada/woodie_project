@@ -7,7 +7,7 @@ import * as S from './style';
 
 import { postSubscription } from 'api/subscriptions';
 
-const SubscriptionBar = () => {
+const SubscriptionBar = ({ noMarginBottom }) => {
   const [name, setName] = useState('');
   const [userEmail, setUserEmail] = useState('');
 
@@ -38,7 +38,7 @@ const SubscriptionBar = () => {
     }
   };
   return (
-    <S.Container>
+    <S.Container noMarginBottom={noMarginBottom}>
       <S.MainWrapper>
         <S.TitleWrapper>
           <h1>Sabe todas as novidades!</h1>

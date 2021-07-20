@@ -1,4 +1,26 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
+
+const slideInRight = keyframes`
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+`;
+
+const slideOutRight = keyframes`
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
+`;
 
 export const Layer = styled.div`
   height: 100%;
@@ -38,4 +60,27 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+export const SubWrapper = styled.div`
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  width: 35rem;
+  transform: translate3d(105%, 0, 0);
+  ${({ isVisible }) =>
+    isVisible !== null &&
+    css`
+      animation: ${isVisible ? slideInRight : slideOutRight} 0.5s linear
+        forwards;
+    `}
+`;
+
+export const CloseBtn = styled.div`
+  color: ${({ theme }) => theme.colors.error};
+  font-size: 2.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
 `;

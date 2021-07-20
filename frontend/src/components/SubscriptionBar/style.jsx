@@ -10,7 +10,7 @@ export const Container = styled.div`
   max-width: ${({ theme }) => theme.dimensions.maxWidth};
   margin: 0 auto;
   border-radius: ${({ theme }) => theme.borderRadius};
-  margin-bottom: 5rem;
+  margin-bottom: ${({ noMarginBottom }) => (noMarginBottom ? 0 : '5rem')};
 
   h1 {
     color: ${({ theme }) => theme.colors.main};
