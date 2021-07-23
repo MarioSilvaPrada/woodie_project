@@ -5,6 +5,11 @@ const theme = {
     error: '#D83A56',
     success: '#29BB89',
   },
+  breakpoints: {
+    S: '500px',
+    M: '1000px',
+    L: '1200px',
+  },
   fontSize: {
     S: '.8rem',
     M: '1.1rem',

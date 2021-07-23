@@ -33,3 +33,21 @@ h5,
 h6 {
   font-family: 'Noto Serif', serif;
 }
+
+@media screen and (max-width: 1400px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 65%;
+  }
+}

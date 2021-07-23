@@ -11,7 +11,6 @@ export const Container = styled.div`
   margin: 0 auto;
   border-radius: ${({ theme }) => theme.borderRadius};
   margin-bottom: ${({ noMarginBottom }) => (noMarginBottom ? 0 : '5rem')};
-
   h1 {
     color: ${({ theme }) => theme.colors.main};
   }
