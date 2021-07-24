@@ -31,7 +31,7 @@ const App = ({ backImg, articles }) => {
           <S.CloseBtn onClick={() => setIsSubModalVisible(false)}>
             <FiX />
           </S.CloseBtn>
-          <SubscriptionBar noMarginBottom />
+          <SubscriptionBar noMarginBottom isModal />
         </S.SubWrapper>
       </S.Container>
       <GalleryRow articles={articles} />

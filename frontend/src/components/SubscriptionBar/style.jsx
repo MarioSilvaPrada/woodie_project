@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -14,6 +14,21 @@ export const Container = styled.div`
   h1 {
     color: ${({ theme }) => theme.colors.main};
   }
+
+  ${({ isModal }) =>
+    !isModal &&
+    css`
+      margin-left: 2rem;
+      margin-right: 2rem;
+    `};
+
+  ${({ isModal }) =>
+    isModal &&
+    css`
+      @media (max-width: 750px) {
+        display: none;
+      }
+    `};
 `;
 
 export const MainWrapper = styled.div`

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
+  width: 100%;
   padding: 0rem 2rem;
   background: ${({ theme }) => theme.colors.main};
   color: ${({ theme }) => theme.colors.secondary};
@@ -21,7 +22,7 @@ export const ItemsWrapper = styled.div`
   align-items: center;
   height: 100%;
   justify-content: space-between;
-`
+`;
 
 export const StyledLink = styled(Link)`
   margin-left: 2rem;

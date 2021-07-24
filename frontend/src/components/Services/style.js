@@ -9,4 +9,8 @@ export const Container = styled.div`
 export const Title = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.XL};
   margin-bottom: 2rem;
+
+  @media (max-width: 1050px) {
+    text-align: center;
+  }
 `;

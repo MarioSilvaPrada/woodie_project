@@ -17,6 +17,10 @@ export const Container = styled.div`
 export const StyledImage = styled.img`
   width: 40rem;
   border-radius: ${({ theme }) => theme.borderRadius};
+
+  @media (max-width: 1050px) {
+    width: 100%;
+  }
 `;
 
 export const ContentWrapper = styled.div`
