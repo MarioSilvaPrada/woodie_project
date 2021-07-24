@@ -83,4 +83,8 @@ export const CloseBtn = styled.div`
   right: 1rem;
   top: 1rem;
   cursor: pointer;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
 `;

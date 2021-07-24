@@ -18,7 +18,7 @@ export const StyledImage = styled.img`
   width: 40rem;
   border-radius: ${({ theme }) => theme.borderRadius};
 
-  @media (max-width: 1050px) {
+  @media (max-width: 850px) {
     width: 100%;
   }
 `;
