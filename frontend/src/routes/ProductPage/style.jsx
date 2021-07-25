@@ -21,12 +21,23 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1050px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const ImagesContainer = styled.div`
   display: flex;
   height: 45rem;
   width: 50rem;
+
+  @media (max-width: 1050px) {
+    width: 100%;
+    height: 30rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+  }
 `;
 
 export const MainImage = styled.div`
