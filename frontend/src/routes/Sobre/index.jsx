@@ -4,17 +4,45 @@ import * as S from './style';
 import Layout from 'components/Layout';
 
 const Sobre = () => (
-  <Layout title='Sobre nós'>
+  <Layout title='A Woodi'>
     <S.ContentWrapper>
-      <S.Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus
-        suscipit ante ut porttitor. In hac habitasse platea dictumst. Aliquam
-        risus nunc, mattis nec dignissim ut, feugiat sed neque. Morbi id
-        pulvinar quam, at laoreet tellus. Aenean commodo dui nibh, vel
-        pellentesque arcu ultrices quis. Pellentesque et maximus urna. Aliquam
-        vehicula tellus dolor, non dapibus nibh scelerisque sit amet. Quisque in
-        arcu ligula. Sed a porttitor odio, non consequat ligula.
-      </S.Paragraph>
+      <S.TextWrapper>
+        <div>
+          <h2>Sobre a Woodi</h2>
+          <S.Paragraph>
+            A WOODi é um projeto de marca. Um projeto assente numa forte ambição
+            em querer construir algo com o nosso cunho. Um fruto do nosso
+            trabalho, apreciado por alguém. Para nós a WOODi significa a paixão
+            em fazer algo que é nosso, da forma mais transparente e genuína
+            possível. Daí, ser assente num recurso que para nós é especial,
+            único, natural e imperfeito. O mobiliário foi o mercado que
+            escolhemos por termos um interesse muito grande por design e
+            decoração. Fazemos peças à medida, mas estamos atualmente mais
+            focados em criar coleções WOODi. As medidas das peças de coleção
+            podem ser personalizadas para se adaptar ao seu espaço. Convido-o a
+            fazer uma visita à nossa galeria e a conhecer os nossos produtos.
+            Até já!
+          </S.Paragraph>
+        </div>
+
+        <div>
+          <h2>Sobre mim</h2>
+          <S.Paragraph>
+            A WOODi é um projeto de marca. Um projeto assente numa forte ambição
+            em querer construir algo com o nosso cunho. Um fruto do nosso
+            trabalho, apreciado por alguém. Para nós a WOODi significa a paixão
+            em fazer algo que é nosso, da forma mais transparente e genuína
+            possível. Daí, ser assente num recurso que para nós é especial,
+            único, natural e imperfeito. O mobiliário foi o mercado que
+            escolhemos por termos um interesse muito grande por design e
+            decoração. Fazemos peças à medida, mas estamos atualmente mais
+            focados em criar coleções WOODi. As medidas das peças de coleção
+            podem ser personalizadas para se adaptar ao seu espaço. Convido-o a
+            fazer uma visita à nossa galeria e a conhecer os nossos produtos.
+            Até já!
+          </S.Paragraph>
+        </div>
+      </S.TextWrapper>
       <S.StyledImg
         src={
           'https://images.pexels.com/photos/461049/pexels-photo-461049.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'

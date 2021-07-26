@@ -19,13 +19,13 @@ const App = ({ backImg, articles }) => {
       <S.Container backImage={backImg}>
         <S.Layer />
         <S.Wrapper>
-          <S.MainTitle>We are Woodi</S.MainTitle>
+          <S.MainTitle>Bem-vindo à Woodi</S.MainTitle>
           <S.Description>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
             imperdiet congue nisi, ornare commodo quam ultrices nec. Fusce
             venenatis semper elementum. Etiam feugiat turpis quis cursus semper.
           </S.Description>
-          <Button route={'galeria'}>Check our gallery</Button>
+          <Button route={'galeria'}>A nossa galeria</Button>
         </S.Wrapper>
         <S.SubWrapper isVisible={isSubModalVisible}>
           <S.CloseBtn onClick={() => setIsSubModalVisible(false)}>

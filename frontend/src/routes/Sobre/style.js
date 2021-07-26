@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  height: 90vh;
-  padding-top: ${({ theme }) => theme.dimensions.navHeight};
-`;
-
 export const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -29,15 +24,29 @@ export const StyledImg = styled.div`
 `;
 
 export const Paragraph = styled.p`
+  line-height: 2rem;
+`;
+
+export const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-right 5rem;
   max-width: 50%;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  div:first-child {
+    margin-bottom: 4rem;
+  }
 
   @media (max-width: 1200px) {
     margin-bottom: 4rem;
     margin-right 0;
   }
-
   @media (max-width: 850px) {
     max-width: 100%;
   }
+
 `;
