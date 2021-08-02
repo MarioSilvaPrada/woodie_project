@@ -16,19 +16,16 @@ export const Container = styled.div`
   }
 
   ${({ isModal }) =>
-    !isModal &&
-    css`
-      margin-left: 2rem;
-      margin-right: 2rem;
-    `};
-
-  ${({ isModal }) =>
     isModal &&
     css`
       @media (max-width: 750px) {
         display: none;
       }
     `};
+
+  @media (max-width: 750px) {
+    margin: 0 2rem 2rem;
+  }
 `;
 
 export const MainWrapper = styled.div`
@@ -45,7 +42,9 @@ export const TitleWrapper = styled.div`
   }
 `;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  padding: 0 1rem;
+`;
 
 export const StyledInput = styled.input`
   padding: 0.7rem 8.5rem 0.7rem 1rem;

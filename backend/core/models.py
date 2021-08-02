@@ -72,6 +72,8 @@ class Reservas (models.Model):
         validators=[phone_regex], max_length=17, blank=True, verbose_name='Contacto telefónico')  # validators should be a list
     cidade = models.CharField(max_length=155, blank=True)
     comentario = models.TextField(blank=True, verbose_name='Comentário')
+    subscrever = models.BooleanField(
+        default=False,  verbose_name='Pretendo receber as últimas novidades da Woodi')
     produto = models.ForeignKey(
         Product,
         on_delete=models.PROTECT,

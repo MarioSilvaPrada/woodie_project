@@ -15,6 +15,7 @@ const ReservationForm = ({ onSubmit, productId, options, ...props }) => {
     cidade: '',
     comentario: '',
     produto: null,
+    subscrever: false,
   };
   const [reservationData, setReservationData] = useState(initialData);
 
@@ -28,7 +29,12 @@ const ReservationForm = ({ onSubmit, productId, options, ...props }) => {
   };
 
   const handleChange = ({ target }) => {
-    setData(target.name, target.value);
+    const iName = target.name;
+    let iValue = target.value;
+    if (iName === 'subscrever') {
+      iValue = !reservationData.subscrever;
+    }
+    setData(iName, iValue);
   };
 
   const createReservation = async (e) => {
@@ -44,6 +50,18 @@ const ReservationForm = ({ onSubmit, productId, options, ...props }) => {
       setReservationData(initialData);
       setIsSuccess(true);
     }
+  };
+
+  const getInputType = (type) => {
+    if (type === 'comentario') {
+      return 'textarea';
+    }
+
+    if (type === 'subscrever') {
+      return 'checkbox';
+    }
+
+    return '';
   };
 
   const getModalContent = () => {
@@ -80,7 +98,7 @@ const ReservationForm = ({ onSubmit, productId, options, ...props }) => {
                   key={key}
                   label={values.label}
                   name={key}
-                  type={key === 'comentario' ? 'textarea' : ''}
+                  type={getInputType(key)}
                   onChange={handleChange}
                   value={reservationData[key]}
                   isRequired={values.required}

@@ -43,6 +43,7 @@ export const Container = styled.div`
 export const MainTitle = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.XXL};
   margin-bottom: 2.4rem;
+  text-align: center;
 `;
 
 export const Description = styled.p`
@@ -60,6 +61,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 1rem;
 `;
 
 export const SubWrapper = styled.div`

@@ -12,9 +12,9 @@ const InputStyle = css`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
   margin-bottom: 1.5rem;
   position: relative;
+  width: 100%;
 `;
 
 export const Label = styled.label`
@@ -56,4 +56,13 @@ export const Info = styled.p`
   color: black;
   font-size: ${({ theme }) => theme.fontSize.S};
   margin-left: 0.5rem;
+`;
+
+export const RadioWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const RadioLabel = styled.p`
+  margin-left: 1.2rem;
 `;
