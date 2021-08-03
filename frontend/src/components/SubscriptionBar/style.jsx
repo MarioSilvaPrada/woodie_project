@@ -23,9 +23,13 @@ export const Container = styled.div`
       }
     `};
 
-  @media (max-width: 750px) {
-    margin: 0 2rem 2rem;
-  }
+  ${({ isModal }) =>
+    !isModal &&
+    css`
+      @media (max-width: ${({ theme }) => theme.dimensions.maxWidth}) {
+        margin: 0 2rem 2rem;
+      }
+    `};
 `;
 
 export const MainWrapper = styled.div`

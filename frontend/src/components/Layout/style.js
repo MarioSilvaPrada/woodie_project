@@ -4,7 +4,7 @@ export const Container = styled.div`
   padding-top: ${({ theme }) => theme.dimensions.navHeight};
   min-height: 90vh;
   max-width: ${({ theme }) => theme.dimensions.maxWidth};
-  margin: 3rem auto;
+  margin: 3rem auto 5rem;
   padding-left: 2rem;
   padding-right: 2rem;
 `;

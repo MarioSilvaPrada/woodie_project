@@ -64,25 +64,32 @@ const ProductPage = ({ options }) => {
               <S.Dim>Largura: {article.largura} cm</S.Dim>
             </S.DimensionsWrapper>
           </S.TextWrapper>
-          <Button onClick={() => setIsModalVisible(true)}>Reservar</Button>
+          <S.ButtonWrapper>
+            <Button onClick={() => setIsModalVisible(true)}>Reservar</Button>
+          </S.ButtonWrapper>
         </S.SideWrapper>
-        <S.ImagesContainer>
-          <LazyImage
-            alt='Main Picture'
-            src={article.main_image}
-            Element={<S.MainImage backImage={article.main_image} />}
-          />
-          <S.SecondaryImages>
-            {getImageArray().map((img) => (
-              <LazyImage
-                key={img}
-                alt='Other Picture'
-                src={img}
-                Element={<S.StyledImg key={img} backImage={img} />}
-              />
-            ))}
-          </S.SecondaryImages>
-        </S.ImagesContainer>
+        <S.SecWrapper>
+          <S.MobileLink onClick={() => history.goBack()}>
+            <BsArrowLeft />
+          </S.MobileLink>
+          <S.ImagesContainer>
+            <LazyImage
+              alt='Main Picture'
+              src={article.main_image}
+              Element={<S.MainImage backImage={article.main_image} />}
+            />
+            <S.SecondaryImages>
+              {getImageArray().map((img) => (
+                <LazyImage
+                  key={img}
+                  alt='Other Picture'
+                  src={img}
+                  Element={<S.StyledImg key={img} backImage={img} />}
+                />
+              ))}
+            </S.SecondaryImages>
+          </S.ImagesContainer>
+        </S.SecWrapper>
       </S.Wrapper>
       <Modal
         isVisible={isModalVisible}

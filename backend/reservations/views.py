@@ -24,7 +24,6 @@ class CreateReservationView(CreateAPIView):
             if not email_exists_in_db:
                 Subscribers.objects.create(name=name, email=user_email)
 
-        
         serializer.save()
 
        

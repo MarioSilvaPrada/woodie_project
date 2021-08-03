@@ -64,5 +64,5 @@ export const RadioWrapper = styled.div`
 `;
 
 export const RadioLabel = styled.p`
-  margin-left: 1.2rem;
+  margin-left: 1rem;
 `;

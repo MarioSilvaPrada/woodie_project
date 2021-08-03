@@ -24,6 +24,7 @@ export const StyledBtn = styled.button`
   font-size: ${({ theme }) => theme.fontSize.M};
   font-family: ${({ theme }) => theme.fontFamily.text};
   cursor: pointer;
+  width: 100%;
 
   &:hover {
     transform: translateY(-0.2rem);

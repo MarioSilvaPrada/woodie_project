@@ -34,7 +34,7 @@ export const ImagesContainer = styled.div`
 
   @media (max-width: 1050px) {
     width: 100%;
-    height: 30rem;
+    height: 32rem;
     margin-bottom: 3rem;
     margin-top: 1rem;
   }
@@ -74,6 +74,12 @@ export const TextWrapper = styled.div`
   max-width: 30rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
+
+  @media (max-width: 1050px) {
+    margin-right: 0;
+    margin-top: 0;
+    max-width: 100%;
+  }
 `;
 
 export const MainTitle = styled.h1`
@@ -104,6 +110,28 @@ export const StyledLink = styled.button`
   &:hover {
     transform: translateX(-5px);
   }
+
+  @media (max-width: 1050px) {
+    display: none;
+  }
+`;
+
+export const MobileLink = styled.button`
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: ${({ theme }) => theme.fontSize.L};
+  border: 2px solid ${({ theme }) => theme.colors.secondary};
+  background: none;
+  display: none;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 1050px) {
+    display: block;
+  }
+`;
+
+export const SecWrapper = styled.div`
+  width: 100%;
 `;
 
 export const DimensionsWrapper = styled.div`
@@ -119,4 +147,10 @@ export const DimTitle = styled.p`
 export const Dim = styled.p`
   font-size: ${({ theme }) => theme.fontSize.S};
   margin-bottom: 0.2rem;
+`;
+
+export const ButtonWrapper = styled.div`
+  @media (max-width: 1050px) {
+    width: 100%;
+  }
 `;
