@@ -15,4 +15,16 @@ class CreateReservationView(CreateAPIView):
         name = f"{serializer.validated_data['primeiro_nome']} {serializer.validated_data['ultimo_nome']}"
 
         if want_subscription:
-            Subscribers.objects.create(name=name, email=user_email)
+            try:
+                email_exists_in_db = Subscribers.objects.get(email=user_email)
+
+            except Exception:
+                email_exists_in_db = None
+
+            if not email_exists_in_db:
+                Subscribers.objects.create(name=name, email=user_email)
+
+        
+        serializer.save()
+
+       
