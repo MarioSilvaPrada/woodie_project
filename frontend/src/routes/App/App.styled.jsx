@@ -48,8 +48,8 @@ export const MainTitle = styled.h1`
 
 export const Description = styled.p`
   max-width: 40rem;
-  font-size: ${({ theme }) => theme.fontSize.M};
-  line-height: 1.6rem;
+  font-size: ${({ theme }) => theme.fontSize.L};
+  line-height: 2.6rem;
   text-align: center;
   margin-bottom: 2rem;
 `;
@@ -89,4 +89,7 @@ export const CloseBtn = styled.div`
   @media (max-width: 750px) {
     display: none;
   }
+`;
+export const ExtraPadding = styled.div`
+  padding: 0 2rem;
 `;

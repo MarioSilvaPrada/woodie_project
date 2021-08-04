@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const marginSide = '7rem';
+const marginSide = '10rem';
 
 export const Container = styled.div`
   display: flex;

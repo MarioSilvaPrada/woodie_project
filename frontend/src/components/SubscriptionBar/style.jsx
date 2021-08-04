@@ -11,6 +11,8 @@ export const Container = styled.div`
   margin: 0 auto;
   border-radius: ${({ theme }) => theme.borderRadius};
   margin-bottom: ${({ noMarginBottom }) => (noMarginBottom ? 0 : '5rem')};
+  box-shadow: 0px 0px 8px 3px rgb(0 0 0 / 70%);
+
   h1 {
     color: ${({ theme }) => theme.colors.main};
   }
@@ -20,14 +22,6 @@ export const Container = styled.div`
     css`
       @media (max-width: 750px) {
         display: none;
-      }
-    `};
-
-  ${({ isModal }) =>
-    !isModal &&
-    css`
-      @media (max-width: ${({ theme }) => theme.dimensions.maxWidth}) {
-        margin: 0 2rem 2rem;
       }
     `};
 `;

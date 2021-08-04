@@ -49,7 +49,7 @@ export const Error = styled.span`
   color: ${({ theme }) => theme.colors.error};
   font-size: ${({ theme }) => theme.fontSize.S};
   position: absolute;
-  bottom: -1.2rem;
+  bottom: -1.4rem;
 `;
 
 export const Info = styled.p`

@@ -21,9 +21,7 @@ const App = ({ backImg, articles }) => {
         <S.Wrapper>
           <S.MainTitle>Bem-vindo à Woodi</S.MainTitle>
           <S.Description>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-            imperdiet congue nisi, ornare commodo quam ultrices nec. Fusce
-            venenatis semper elementum. Etiam feugiat turpis quis cursus semper.
+            Venha conhecer os nossos artigos 100% em madeira.
           </S.Description>
           <Button route={'galeria'}>A nossa galeria</Button>
         </S.Wrapper>
@@ -36,7 +34,9 @@ const App = ({ backImg, articles }) => {
       </S.Container>
       <GalleryRow articles={articles} />
       <Services />
-      <SubscriptionBar />
+      <S.ExtraPadding>
+        <SubscriptionBar />
+      </S.ExtraPadding>
     </>
   );
 };

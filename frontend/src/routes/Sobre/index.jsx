@@ -5,7 +5,7 @@ import aboutImg from 'assets/images/about-img.jpg';
 import Layout from 'components/Layout';
 
 const Sobre = () => (
-  <Layout title='A Woodi'>
+  <Layout title='Sobre'>
     <S.ContentWrapper>
       <S.TextWrapper>
         <div>

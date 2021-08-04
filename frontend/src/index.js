@@ -67,7 +67,11 @@ const Index = () => {
             component={() => <ProductPage options={options} />}
           />
           <Route exact path='/sobre' component={Sobre} />
-          <Route exact path='/contactos' component={Contactos} />
+          <Route
+            exact
+            path='/contactos'
+            component={() => <Contactos logo={styleSettings.logo} />}
+          />
           <Route path='*' component={PageNotFound} />
         </Switch>
         <Footer logo={styleSettings.logo} />
