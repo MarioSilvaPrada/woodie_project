@@ -30,7 +30,6 @@ export const Wrapper = styled.div`
 export const ImagesContainer = styled.div`
   display: flex;
   height: 45rem;
-  width: 50rem;
 
   @media (max-width: 1050px) {
     width: 100%;
@@ -71,7 +70,7 @@ export const SecondaryImages = styled.div`
 
 export const TextWrapper = styled.div`
   margin-right: 4rem;
-  max-width: 30rem;
+  max-width: 35rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
 

@@ -62,7 +62,7 @@ const SubscriptionBar = ({ noMarginBottom, isModal }) => {
           <S.Error>{error.name}</S.Error>
           <S.InputWrapper>
             <S.StyledInput
-              placeholder={'E-mail address'}
+              placeholder={'E-mail'}
               value={userEmail}
               onChange={({ target }) => setUserEmail(target.value)}
             />

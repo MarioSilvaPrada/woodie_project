@@ -1,5 +1,6 @@
 import React from 'react';
 import * as S from './style';
+import aboutImg from 'assets/images/about-img.jpg';
 
 import Layout from 'components/Layout';
 
@@ -43,11 +44,7 @@ const Sobre = () => (
           </S.Paragraph>
         </div>
       </S.TextWrapper>
-      <S.StyledImg
-        src={
-          'https://images.pexels.com/photos/461049/pexels-photo-461049.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
-        }
-      />
+      <S.StyledImg src={aboutImg} />
     </S.ContentWrapper>
   </Layout>
 );
