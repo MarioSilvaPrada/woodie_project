@@ -40,7 +40,7 @@ export const ImagesContainer = styled.div`
 `;
 
 export const MainImage = styled.div`
-  background-image: url(${({ backImage }) => backImage});
+  background-image: url(${({ src }) => src});
   background-size: cover;
   background-position: center;
   width: 50%;
@@ -49,7 +49,7 @@ export const MainImage = styled.div`
   animation: 1s ${opacityAnim} ease-out;
 `;
 export const StyledImg = styled.div`
-  background-image: url(${({ backImage }) => backImage});
+  background-image: url(${({ src }) => src});
   background-size: cover;
   background-position: center;
   height: 100%;

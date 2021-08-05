@@ -1,6 +1,7 @@
 import React from 'react';
 import * as S from './style';
 import aboutImg from 'assets/images/about-img.jpg';
+import LazyImage from 'components/LazyImage';
 
 import Layout from 'components/Layout';
 
@@ -44,7 +45,11 @@ const Sobre = () => (
           </S.Paragraph>
         </div>
       </S.TextWrapper>
-      <S.StyledImg src={aboutImg} />
+      <LazyImage
+        alt='About image'
+        src={aboutImg}
+        actual={({ imageProps }) => <S.StyledImg {...imageProps} />}
+      />
     </S.ContentWrapper>
   </Layout>
 );

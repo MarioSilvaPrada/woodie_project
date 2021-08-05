@@ -76,7 +76,7 @@ const ProductPage = ({ options }) => {
             <LazyImage
               alt='Main Picture'
               src={article.main_image}
-              Element={<S.MainImage backImage={article.main_image} />}
+              actual={({ imageProps }) => <S.MainImage {...imageProps} />}
             />
             <S.SecondaryImages>
               {getImageArray().map((img) => (
@@ -84,7 +84,9 @@ const ProductPage = ({ options }) => {
                   key={img}
                   alt='Other Picture'
                   src={img}
-                  Element={<S.StyledImg key={img} backImage={img} />}
+                  actual={({ imageProps }) => (
+                    <S.StyledImg key={img} {...imageProps} />
+                  )}
                 />
               ))}
             </S.SecondaryImages>

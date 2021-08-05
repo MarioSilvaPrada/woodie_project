@@ -1,7 +1,7 @@
 import React from 'react';
 import { LazyImage } from 'react-lazy-images';
 
-const MyLazyImage = ({ alt, Element, src }) => {
+const MyLazyImage = ({ alt, src, ...props }) => {
   return (
     <LazyImage
       alt={alt}
@@ -18,9 +18,7 @@ const MyLazyImage = ({ alt, Element, src }) => {
         />
       )}
       src={src}
-      actual={() => {
-        return Element;
-      }}
+      {...props}
     />
   );
 };
