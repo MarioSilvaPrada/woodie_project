@@ -4,7 +4,6 @@ import * as S from './style';
 import ProductCard from 'components/ProductCard';
 
 const GalleryRow = ({ articles }) => {
-  console.log({ articles });
   return (
     <S.Container>
       <S.Header>

@@ -5,7 +5,7 @@ const marginSide = '10rem';
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 8rem;
   flex-direction: ${({ isOdd }) => (isOdd ? 'row-reverse' : 'row')};
 
   @media (max-width: 1050px) {
@@ -14,13 +14,13 @@ export const Container = styled.div`
   }
 `;
 
-export const StyledImage = styled.img`
-  width: 40rem;
+export const StyledImage = styled.div`
+  width: 100%;
+  height: 30rem;
   border-radius: ${({ theme }) => theme.borderRadius};
-
-  @media (max-width: 850px) {
-    width: 100%;
-  }
+  background-image: url(${({ src }) => src});
+  background-size: cover;
+  background-position: center;
 `;
 
 export const ContentWrapper = styled.div`
