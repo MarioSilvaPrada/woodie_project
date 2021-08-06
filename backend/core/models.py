@@ -21,11 +21,20 @@ def recipe_image_file_path(instance, filename):
     return os.path.join('images/products/', filename)
 
 
+class Colecao (models.Model):
+    class Meta:
+        verbose_name_plural = "Coleções"
+
+    name = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, blank=True)
+
+
 class Product(models.Model):
     class Meta:
         verbose_name_plural = "Produtos"
 
     name = models.CharField(max_length=255)
+    colecao = models.ForeignKey(Colecao, on_delete=models.SET_NULL, null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)
     description = models.CharField(max_length=255)
     altura = models.DecimalField(max_digits=6, decimal_places=2)

@@ -59,9 +59,11 @@ const ProductPage = ({ options }) => {
             <p>{article.description}</p>
             <S.DimensionsWrapper>
               <S.DimTitle>Dimensões:</S.DimTitle>
-              <S.Dim>Altura: {article.altura} cm</S.Dim>
               <S.Dim>Comprimento: {article.comprimento} cm</S.Dim>
               <S.Dim>Largura: {article.largura} cm</S.Dim>
+              {parseFloat(article.altura) > 0 && (
+                <S.Dim>Altura: {article.altura} cm</S.Dim>
+              )}
             </S.DimensionsWrapper>
           </S.TextWrapper>
           <S.ButtonWrapper>
