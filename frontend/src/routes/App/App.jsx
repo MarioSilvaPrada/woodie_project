@@ -14,6 +14,8 @@ const App = ({ backImg, articles }) => {
       setIsSubModalVisible(true);
     }, 1000);
   }, []);
+
+  console.log({ articles });
   return (
     <>
       <S.Container backImage={backImg}>
