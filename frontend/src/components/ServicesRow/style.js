@@ -26,16 +26,20 @@ export const StyledImage = styled.div`
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  line-height: 2rem;
   margin: ${({ isOdd }) =>
     isOdd ? `0 0 0 ${marginSide}` : `0 ${marginSide} 0 0`};
 
   @media (max-width: 1050px) {
     margin: 0;
     margin-bottom: 3rem;
-    text-align: center;
   }
 `;
 
 export const RowTitle = styled.h1`
   margin-bottom: 2rem;
+
+  @media (max-width: 1050px) {
+    text-align: center;
+  }
 `;
