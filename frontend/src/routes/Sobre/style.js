@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const opacityAnim = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
 
 export const ContentWrapper = styled.div`
   display: flex;
@@ -16,6 +25,8 @@ export const StyledImg = styled.div`
   background-image: url(${({ src }) => src});
   background-position: center;
   background-size: cover;
+  transitions: 0.5s;
+  animation: 1s ${opacityAnim} ease-out;
 
   @media (max-width: 700px) {
     width: 25rem;

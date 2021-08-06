@@ -9,10 +9,12 @@ export const Container = styled.div`
 
 export const StyledImg = styled.img`
   width: 8rem;
+  margin-bottom: 2rem;
 `;
 
 export const StyledText = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.S};
+  font-size: 0.9rem;
+  font-style: italic;
 `;
 
 export const Wrapper = styled.div`

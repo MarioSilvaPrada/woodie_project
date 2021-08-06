@@ -49,7 +49,7 @@ const SubscriptionBar = ({ noMarginBottom, isModal }) => {
         <S.TitleWrapper>
           <h1>Saiba todas as novidades!</h1>
           <p>
-            Junta-te à nossa mail list e recebe conteúdo exlusivo relativo às
+            Junte-se à nossa mail list e receba conteúdo exlusivo sobre as
             nossas novidades.
           </p>
         </S.TitleWrapper>

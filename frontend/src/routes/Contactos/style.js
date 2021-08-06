@@ -28,7 +28,7 @@ export const LeftWrapper = styled.div``;
 export const Left = styled.div`
   width: 55%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(93, 83, 74, 0.7);
   color: white;
   border-top-left-radius: ${({ theme }) => theme.borderRadius};
   border-bottom-left-radius: ${({ theme }) => theme.borderRadius};
