@@ -10,7 +10,7 @@ import LazyImage from 'components/LazyImage';
 import Layout from 'components/Layout';
 import { BsArrowLeft } from 'react-icons/bs';
 
-const ProductPage = ({ options }) => {
+const ProductPage = ({ options, getCollectionName }) => {
   const location = useLocation();
   const history = useHistory();
   const { id } = useParams();
@@ -56,6 +56,9 @@ const ProductPage = ({ options }) => {
           <S.TextWrapper>
             <S.MainTitle>{article.name}</S.MainTitle>
             <S.Price>{article.price}€</S.Price>
+            <S.CollectionText>
+              {getCollectionName(article.colecao)}
+            </S.CollectionText>
             <p>{article.description}</p>
             <S.DimensionsWrapper>
               <S.DimTitle>Dimensões:</S.DimTitle>

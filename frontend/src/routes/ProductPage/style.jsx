@@ -153,3 +153,13 @@ export const ButtonWrapper = styled.div`
     width: 100%;
   }
 `;
+
+export const CollectionText = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.S};
+  margin-bottom: 1.2rem;
+  padding: 0.5rem 0.8rem;
+  background: ${({ theme }) => theme.colors.main};
+  font-style: italic;
+  display: inline-block;
+  border-radius: ${({ theme }) => theme.borderRadius};
+`;

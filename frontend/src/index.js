@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './index.css';
 import { getSettings } from 'api/settings';
-import { getProducts } from 'api/products';
+import { getProducts, getCollections } from 'api/products';
 import { getReservationOptions } from 'api/reservations';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -25,14 +25,25 @@ const Index = () => {
   const [styleSettings, setStyleSettings] = useState({});
   const [options, setOptions] = useState(null);
 
+  const [collections, setCollections] = useState([]);
   const [articles, setArticles] = useState([]);
+
+  const getCollectionName = (id) => {
+    for (const collection of collections) {
+      if (collection.id === id) {
+        return collection.name;
+      }
+    }
+  };
 
   const fetchData = async () => {
     const res = await getSettings();
+    const myCollections = await getCollections();
     const myProducts = await getProducts();
     const myOptions = await getReservationOptions();
 
     setStyleSettings(res[0]);
+    setCollections(myCollections);
     setArticles(myProducts);
     setOptions(myOptions);
 
@@ -59,12 +70,19 @@ const Index = () => {
           <Route
             exact
             path='/galeria'
-            component={() => <Galeria articles={articles} />}
+            component={() => (
+              <Galeria articles={articles} collections={collections} />
+            )}
           />
           <Route
             exact
             path='/artigo/:id'
-            component={() => <ProductPage options={options} />}
+            component={() => (
+              <ProductPage
+                options={options}
+                getCollectionName={getCollectionName}
+              />
+            )}
           />
           <Route exact path='/sobre' component={Sobre} />
           <Route

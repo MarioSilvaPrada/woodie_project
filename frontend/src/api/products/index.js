@@ -23,4 +23,17 @@ const getSingleProduct = async (id) => {
     console.log(err.response);
   }
 };
-export { getProducts, getSingleProduct };
+
+const getCollections = async () => {
+  try {
+    const res = await api.get(`api/collections/`);
+
+    if (res.status === 200) {
+      return res.data;
+    }
+  } catch (err) {
+    console.log(err.response);
+  }
+};
+
+export { getProducts, getSingleProduct, getCollections };
