@@ -3,6 +3,7 @@ from products.views import ProductAPIView, SingleProductAPIView
 from reservations.views import CreateReservationView
 from style_settings.views import StyleSettingsAPIView
 from subscribers.views import ListCreateSubscriber
+from colections.views import ListCollectionView
 
 
 app_name = 'api'
@@ -23,4 +24,5 @@ urlpatterns = [
     path('reservations/', CreateReservationView.as_view(), name='reservations'),
     path('style-settings/', styleSettingsList, name='all_style_settings'),
     path('subscriptions/', ListCreateSubscriber.as_view(), name='subscriptions'),
+    path('collections/', ListCollectionView.as_view(), name='collections'),
 ]
