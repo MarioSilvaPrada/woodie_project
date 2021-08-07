@@ -11,6 +11,7 @@ export const InputsWrapper = styled.div`
 export const NameWrapper = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
 
   div:first-child {
     margin-right: 1rem;

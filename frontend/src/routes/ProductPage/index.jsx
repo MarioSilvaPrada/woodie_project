@@ -56,9 +56,11 @@ const ProductPage = ({ options, getCollectionName }) => {
           <S.TextWrapper>
             <S.MainTitle>{article.name}</S.MainTitle>
             <S.Price>{article.price}€</S.Price>
-            <S.CollectionText>
-              {getCollectionName(article.colecao)}
-            </S.CollectionText>
+            {article.colecao && (
+              <S.CollectionText>
+                {getCollectionName(article.colecao)}
+              </S.CollectionText>
+            )}
             <p>{article.description}</p>
             <S.DimensionsWrapper>
               <S.DimTitle>Dimensões:</S.DimTitle>
