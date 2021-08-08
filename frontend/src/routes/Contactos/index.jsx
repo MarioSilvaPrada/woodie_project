@@ -25,7 +25,7 @@ const Contactos = ({ logo }) => (
             <S.SocialIcon />
             <S.Info>
               <a href='https://www.instagram.com/woodi.pt/' target='blank'>
-                @woodie.pt
+                @woodi.pt
               </a>
             </S.Info>
           </S.Row>
