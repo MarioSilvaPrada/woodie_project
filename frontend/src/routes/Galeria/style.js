@@ -10,7 +10,7 @@ export const CollectionsWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   @media (max-width: 1200px) {
     justify-content: center;
   }

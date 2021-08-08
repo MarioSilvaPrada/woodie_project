@@ -75,6 +75,7 @@ const ReservationForm = ({ onSubmit, productId, options, ...props }) => {
               onChange={handleChange}
               error={error?.primeiro_nome}
               value={reservationData['primeiro_nome']}
+              wrapStyle={{ width: '50%' }}
               isRequired
             />
             <Input
@@ -83,6 +84,7 @@ const ReservationForm = ({ onSubmit, productId, options, ...props }) => {
               onChange={handleChange}
               error={error?.ultimo_nome}
               value={reservationData['ultimo_nome']}
+              wrapStyle={{ width: '50%' }}
               isRequired
             />
           </S.NameWrapper>

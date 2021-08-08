@@ -1,7 +1,14 @@
 import React from 'react';
 import * as S from './style';
 
-const Input = ({ label, isRequired, error, additionalInfo, ...props }) => {
+const Input = ({
+  label,
+  isRequired,
+  error,
+  additionalInfo,
+  wrapStyle,
+  ...props
+}) => {
   const getInput = (type) => {
     if (props.type === 'textarea') {
       return (
@@ -29,7 +36,7 @@ const Input = ({ label, isRequired, error, additionalInfo, ...props }) => {
     );
   };
   return (
-    <S.Wrapper>
+    <S.Wrapper style={wrapStyle}>
       <S.LabelWrapper>
         {props.type !== 'checkbox' && <S.Label>{label}</S.Label>}
         <S.Info>{additionalInfo}</S.Info>
