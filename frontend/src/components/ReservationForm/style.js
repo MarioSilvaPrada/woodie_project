@@ -18,10 +18,6 @@ export const NameWrapper = styled.div`
   }
 
   @media (max-width: 500px) {
-    flex-direction: column;
-    div:first-child {
-      margin-right: 0;
-    }
   }
 `;
 
