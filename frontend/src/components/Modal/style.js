@@ -28,6 +28,12 @@ export const ModalWrapper = styled.div`
   background: white;
   border-radius: ${({ theme }) => theme.borderRadius};
   animation: 0.4s ${bounce} linear;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    margin: 0 1rem;
+    padding: 1.2rem;
+  }
 `;
 
 export const CloseWrapper = styled.div`
