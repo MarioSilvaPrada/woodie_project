@@ -5,7 +5,6 @@ import ProductCard from 'components/ProductCard';
 import Layout from 'components/Layout';
 
 const Galeria = ({ articles, collections }) => {
-  console.log({ collections });
   const [collectionSelected, setCollectionSelected] = useState(null);
 
   return (
