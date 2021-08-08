@@ -16,6 +16,13 @@ export const NameWrapper = styled.div`
   div:first-child {
     margin-right: 1rem;
   }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    div:first-child {
+      margin-right: 0;
+    }
+  }
 `;
 
 export const SubmitBtn = styled.button`
