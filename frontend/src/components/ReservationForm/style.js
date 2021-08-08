@@ -13,6 +13,10 @@ export const NameWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  div:first-child {
+    margin-right: 1rem;
+  }
 `;
 
 export const SubmitBtn = styled.button`
