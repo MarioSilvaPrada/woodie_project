@@ -17,20 +17,25 @@ const Galeria = ({ articles, collections }) => {
         >
           <span>Todas</span>
         </S.Collection>
-        {collections.map(({ id, name }) => (
+        {collections.map((el) => (
           <S.Collection
-            key={id}
-            onClick={() => setCollectionSelected(id)}
-            isSelected={id === collectionSelected}
+            key={el.id}
+            onClick={() => setCollectionSelected(el)}
+            isSelected={el.id === collectionSelected?.id}
           >
-            <span>{name}</span>
+            <span>{el.name}</span>
           </S.Collection>
         ))}
       </S.CollectionsWrapper>
+      <S.CatWrapper>
+        {collectionSelected && (
+          <S.Paragraph>{collectionSelected.description}</S.Paragraph>
+        )}
+      </S.CatWrapper>
       <S.StyledGrid>
         {articles
           .filter((el) =>
-            collectionSelected ? el.colecao === collectionSelected : el
+            collectionSelected ? el.colecao === collectionSelected.id : el
           )
           .map((el) => (
             <ProductCard key={el.id} article={el} noInfo type='galeria' />
