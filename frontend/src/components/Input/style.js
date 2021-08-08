@@ -14,7 +14,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   margin-bottom: 1.5rem;
   position: relative;
-  width: 100%;
 `;
 
 export const Label = styled.label`
