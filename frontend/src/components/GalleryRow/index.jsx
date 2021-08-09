@@ -8,7 +8,7 @@ const GalleryRow = ({ articles }) => {
     <S.Container>
       <S.Header>
         <S.Title>Já disponível</S.Title>
-        <S.StyledLink to='galeria'>Ver todos</S.StyledLink>
+        <S.StyledLink to='loja'>Ver todos</S.StyledLink>
       </S.Header>
       <S.ProductsWrapper>
         {articles.map((article) => {

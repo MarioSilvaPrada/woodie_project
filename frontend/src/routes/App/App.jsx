@@ -24,7 +24,7 @@ const App = ({ backImg, articles }) => {
           <S.Description>
             Venha conhecer os nossos artigos 100% em madeira.
           </S.Description>
-          <Button route={'galeria'}>A nossa galeria</Button>
+          <Button route={'loja'}>A nossa loja</Button>
         </S.Wrapper>
         <S.SubWrapper isVisible={isSubModalVisible}>
           <S.CloseBtn onClick={() => setIsSubModalVisible(false)}>

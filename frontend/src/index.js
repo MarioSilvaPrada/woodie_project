@@ -69,7 +69,7 @@ const Index = () => {
           />
           <Route
             exact
-            path='/galeria'
+            path='/loja'
             component={() => (
               <Galeria articles={articles} collections={collections} />
             )}

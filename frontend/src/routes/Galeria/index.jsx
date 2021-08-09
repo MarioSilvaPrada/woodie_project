@@ -8,7 +8,7 @@ const Galeria = ({ articles, collections }) => {
   const [collectionSelected, setCollectionSelected] = useState(null);
 
   return (
-    <Layout title='Galeria'>
+    <Layout title='Loja'>
       <S.CollectionsWrapper>
         <S.Collection
           onClick={() => setCollectionSelected(null)}
