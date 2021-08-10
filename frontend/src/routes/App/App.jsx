@@ -5,6 +5,7 @@ import Button from 'components/Button';
 import GalleryRow from 'components/GalleryRow';
 import Services from 'components/Services';
 import SubscriptionBar from 'components/SubscriptionBar';
+import video from '../../assets/video/woodi_video.mov';
 
 const App = ({ backImg, articles }) => {
   const [isSubModalVisible, setIsSubModalVisible] = useState(null);
@@ -14,6 +15,8 @@ const App = ({ backImg, articles }) => {
       setIsSubModalVisible(true);
     }, 1000);
   }, []);
+
+  console.log(backImg);
 
   return (
     <>
@@ -34,6 +37,15 @@ const App = ({ backImg, articles }) => {
         </S.SubWrapper>
       </S.Container>
       <GalleryRow articles={articles} />
+      <S.VideoWrapper>
+        <S.VideoContainer
+          src={video}
+          controls
+          autoPlay={false}
+          loop={false}
+          muted={false}
+        />
+      </S.VideoWrapper>
       <Services />
       <S.ExtraPadding>
         <SubscriptionBar />

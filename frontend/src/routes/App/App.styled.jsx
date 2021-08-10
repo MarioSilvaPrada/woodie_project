@@ -93,3 +93,16 @@ export const CloseBtn = styled.div`
 export const ExtraPadding = styled.div`
   padding: 0 2rem;
 `;
+
+export const VideoContainer = styled.video`
+  width: 30rem;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  background: ${({ theme }) => theme.colors.main};
+`;
+
+export const VideoWrapper = styled.div`
+  padding: 4rem 0;
+  margin: 0 2rem;
+  display: flex;
+  justify-content: center;
+`;

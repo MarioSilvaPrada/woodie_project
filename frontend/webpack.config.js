@@ -26,6 +26,19 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(mp4|mov)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              publicPath: './src/assets/video',
+              outputPath: './src/assets/video',
+            },
+          },
+        ],
+      },
+      {
         test: /\.jsx?$/,
         include: path.resolve(__dirname, 'src'),
         use: ['babel-loader'],

@@ -19,6 +19,7 @@ import PageNotFound from './routes/PageNotFound/PageNotFound';
 import NavBar from 'components/NavBar/NavBar';
 import Spinner from 'components/Spinner';
 import Footer from 'components/Footer';
+import video from 'assets/video/woodi_video.mov';
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
