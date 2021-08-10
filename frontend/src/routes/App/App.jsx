@@ -15,8 +15,6 @@ const App = ({ backImg, articles }) => {
     }, 1000);
   }, []);
 
-  console.log(backImg);
-
   return (
     <>
       <S.Container backImage={backImg}>
