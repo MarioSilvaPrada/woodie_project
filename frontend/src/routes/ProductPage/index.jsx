@@ -85,7 +85,11 @@ const ProductPage = ({ options, getCollectionName }) => {
               href={article.main_image}
               target='blank'
               src={article.main_image}
-              actual={({ imageProps }) => <S.MainImage {...imageProps} />}
+              actual={({ imageProps }) => (
+                <S.MainImage {...imageProps}>
+                  <S.ZoomIcon />
+                </S.MainImage>
+              )}
             />
             <S.SecondaryImages>
               {getImageArray().map((img) => (
@@ -96,7 +100,9 @@ const ProductPage = ({ options, getCollectionName }) => {
                   target='blank'
                   src={img}
                   actual={({ imageProps }) => (
-                    <S.StyledImg key={img} {...imageProps} />
+                    <S.StyledImg key={img} {...imageProps}>
+                      <S.ZoomIcon />
+                    </S.StyledImg>
                   )}
                 />
               ))}

@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
+import { BiSearch } from 'react-icons/bi';
 
 const opacityAnim = keyframes`
     0% {
@@ -48,6 +49,7 @@ export const MainImage = styled.a`
   margin-right: 0.5rem;
   border-radius: ${({ theme }) => theme.borderRadius};
   animation: 1s ${opacityAnim} ease-out;
+  position: relative;
 `;
 export const StyledImg = styled.a`
   cursor: pointer;
@@ -58,6 +60,7 @@ export const StyledImg = styled.a`
   margin-bottom: 0.5rem;
   border-radius: ${({ theme }) => theme.borderRadius};
   animation: 1s ${opacityAnim} ease-out;
+  position: relative;
 
   &:last-child {
     margin-bottom: 0;
@@ -163,5 +166,16 @@ export const CollectionText = styled.p`
   background: ${({ theme }) => theme.colors.main};
   font-style: italic;
   display: inline-block;
+  border-radius: ${({ theme }) => theme.borderRadius};
+`;
+
+export const ZoomIcon = styled(BiSearch)`
+  color: white;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.7rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.3rem;
   border-radius: ${({ theme }) => theme.borderRadius};
 `;
