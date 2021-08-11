@@ -39,7 +39,8 @@ export const ImagesContainer = styled.div`
   }
 `;
 
-export const MainImage = styled.div`
+export const MainImage = styled.a`
+  cursor: pointer;
   background-image: url(${({ src }) => src});
   background-size: cover;
   background-position: center;
@@ -48,7 +49,8 @@ export const MainImage = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius};
   animation: 1s ${opacityAnim} ease-out;
 `;
-export const StyledImg = styled.div`
+export const StyledImg = styled.a`
+  cursor: pointer;
   background-image: url(${({ src }) => src});
   background-size: cover;
   background-position: center;

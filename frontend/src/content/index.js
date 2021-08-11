@@ -5,7 +5,7 @@ import img3 from 'assets/images/img3.jpeg';
 const content = {
   services: [
     {
-      title: '100% Madeira',
+      title: 'Foco na madeira',
       description: `Na WOODi trabalhamos para criar uma imagem singular e produzir peças únicas 100% em madeira. A madeira é o nosso recurso de eleição pela sua beleza sempre única e genuína.`,
       image: img1,
     },

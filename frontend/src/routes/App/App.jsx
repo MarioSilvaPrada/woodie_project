@@ -22,7 +22,7 @@ const App = ({ backImg, articles }) => {
         <S.Wrapper>
           <S.MainTitle>Bem-vindo à Woodi</S.MainTitle>
           <S.Description>
-            Venha conhecer os nossos artigos 100% em madeira.
+            Venha conhecer os nossos artigos em madeira.
           </S.Description>
           <Button route={'loja'}>A nossa loja</Button>
         </S.Wrapper>

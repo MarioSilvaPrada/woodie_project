@@ -82,6 +82,8 @@ const ProductPage = ({ options, getCollectionName }) => {
           <S.ImagesContainer>
             <LazyImage
               alt='Main Picture'
+              href={article.main_image}
+              target='blank'
               src={article.main_image}
               actual={({ imageProps }) => <S.MainImage {...imageProps} />}
             />
@@ -90,6 +92,8 @@ const ProductPage = ({ options, getCollectionName }) => {
                 <LazyImage
                   key={img}
                   alt='Other Picture'
+                  href={img}
+                  target='blank'
                   src={img}
                   actual={({ imageProps }) => (
                     <S.StyledImg key={img} {...imageProps} />
