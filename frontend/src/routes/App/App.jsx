@@ -20,7 +20,7 @@ const App = ({ backImg, articles }) => {
       <S.Container backImage={backImg}>
         <S.Layer />
         <S.Wrapper>
-          <S.MainTitle>Bem-vindo à Woodi</S.MainTitle>
+          <S.MainTitle>Bem-vindo à WOODi</S.MainTitle>
           <S.Description>
             Venha conhecer os nossos artigos em madeira.
           </S.Description>
