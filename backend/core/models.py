@@ -2,6 +2,8 @@ from django.db import models
 import uuid
 import os
 from django.core.validators import RegexValidator
+from django.db.models.signals import post_delete
+from django.dispatch.dispatcher import receiver
 
 from colorfield.fields import ColorField
 
@@ -41,6 +43,13 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+@receiver(post_delete, sender=Product)
+def delete_image_file(sender, instance, **kwargs):                          
+    instance.main_image.delete(False)
+    instance.image1.delete(False)
+    instance.image2.delete(False)
+    instance.image3.delete(False)
+
 
 class StyleSettings(models.Model):
     class Meta:
@@ -53,6 +62,11 @@ class StyleSettings(models.Model):
 
     def __str__(self):
         return 'My Settings'
+
+@receiver(post_delete, sender=StyleSettings)
+def delete_image_file(sender, instance, **kwargs):                          
+    instance.main_background.delete(False)
+   
 
 
 class Reservas (models.Model):
