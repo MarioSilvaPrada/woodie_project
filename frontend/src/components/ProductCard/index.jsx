@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './style';
 
-const ProductCard = ({ article, noInfo, type }) => {
+const ProductCard = ({ article, noInfo, type, cardWidth }) => {
   return (
     <S.Product
       type={type}
@@ -13,7 +13,7 @@ const ProductCard = ({ article, noInfo, type }) => {
       }}
       key={article.id}
     >
-      <S.ProductImg mainImg={article.main_image} />
+      <S.ProductImg cardWidth={cardWidth} mainImg={article.main_image} />
       {!noInfo && (
         <>
           <S.ProductTitle>{article.name}</S.ProductTitle>

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 const InputStyle = css`
   border-radius: ${({ theme }) => theme.borderRadius};
   background: white;
-  padding: 0.5rem;
+  padding: 0.6rem 0.8rem;
   border: 1px solid ${({ theme }) => theme.colors.secondary};
   font-size: ${({ theme }) => theme.fontSize.M};
   font-family: ${({ theme }) => theme.fontFamily.text};
@@ -12,15 +12,14 @@ const InputStyle = css`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
   margin-bottom: 1.5rem;
+  position: relative;
 `;
 
 export const Label = styled.label`
   font-size: ${({ theme }) => theme.fontSize.M};
   font-family: ${({ theme }) => theme.fontFamily.header};
   color: ${({ theme }) => theme.colors.secondary};
-  margin-bottom: 0.4rem;
   font-weight: bold;
 `;
 export const StyledInput = styled.input`
@@ -36,6 +35,7 @@ export const StyledTextArea = styled.textarea`
 export const LabelWrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 0.4rem;
 `;
 
 export const Required = styled.span`
@@ -47,5 +47,21 @@ export const Required = styled.span`
 export const Error = styled.span`
   color: ${({ theme }) => theme.colors.error};
   font-size: ${({ theme }) => theme.fontSize.S};
-  margin-top: 0.2rem;
+  position: absolute;
+  bottom: -1.4rem;
+`;
+
+export const Info = styled.p`
+  color: black;
+  font-size: ${({ theme }) => theme.fontSize.S};
+  margin-left: 0.5rem;
+`;
+
+export const RadioWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const RadioLabel = styled.p`
+  margin-left: 1rem;
 `;

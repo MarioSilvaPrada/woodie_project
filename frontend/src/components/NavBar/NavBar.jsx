@@ -9,7 +9,7 @@ const NavBar = ({ logo, articles }) => (
         <S.Logo src={logo} />
       </Link>
       <div>
-        <S.StyledLink to={'/galeria'}>Galeria</S.StyledLink>
+        <S.StyledLink to={'/loja'}>Loja</S.StyledLink>
         <S.StyledLink to='/sobre'>Sobre</S.StyledLink>
         <S.StyledLink to='/contactos'>Contactos</S.StyledLink>
       </div>

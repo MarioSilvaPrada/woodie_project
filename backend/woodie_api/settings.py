@@ -34,7 +34,7 @@ ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 CORS_ORIGIN_WHITELIST = ('http://localhost:9000',
                          'http://localhost:8000',
-                         'https://woodi-backend.herokuapp.com',)
+                         'https://www.woodi.shop')
 
 
 if DEBUG == 0:
@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     'products',
     'reservations',
     'style_settings',
+    'subscribers',
 ]
 
 MIDDLEWARE = [

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 export const Container = styled.div`
   max-width: ${({ theme }) => theme.dimensions.maxWidth};
   margin: 0 auto 5rem;
+  padding: 0 2rem;
 `;
 
 export const Header = styled.div`
@@ -22,17 +23,16 @@ export const StyledLink = styled(Link)`
 export const ProductsWrapper = styled.div`
   display: flex;
   align-items: center;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 1rem;
-
-  a {
-    width: 22rem;
-  }
+  margin: 0 -1rem;
 
   a:not(:last-child) {
     margin-right: 2rem;
   }
 `;
+
+export const ScrollBar = styled.div``;
 
 export const Title = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.XL};

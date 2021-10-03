@@ -21,6 +21,8 @@ export const ModalBackground = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: ${({ theme }) => theme.dimensions.navHeight};
+
 `;
 
 export const ModalWrapper = styled.div`
@@ -28,6 +30,12 @@ export const ModalWrapper = styled.div`
   background: white;
   border-radius: ${({ theme }) => theme.borderRadius};
   animation: 0.4s ${bounce} linear;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    margin: 0 1rem;
+    padding: 1.2rem;
+  }
 `;
 
 export const CloseWrapper = styled.div`

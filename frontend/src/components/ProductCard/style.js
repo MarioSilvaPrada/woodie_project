@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const ProductImg = styled.div`
-  width: 100%;
+  width: ${({ cardWidth }) => cardWidth || '100%'};
   height: 100%;
   height: 30rem;
   background-image: url(${({ mainImg }) => mainImg || ''});

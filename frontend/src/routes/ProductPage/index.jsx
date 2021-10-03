@@ -10,7 +10,7 @@ import LazyImage from 'components/LazyImage';
 import Layout from 'components/Layout';
 import { BsArrowLeft } from 'react-icons/bs';
 
-const ProductPage = () => {
+const ProductPage = ({ options, getCollectionName }) => {
   const location = useLocation();
   const history = useHistory();
   const { id } = useParams();
@@ -56,39 +56,65 @@ const ProductPage = () => {
           <S.TextWrapper>
             <S.MainTitle>{article.name}</S.MainTitle>
             <S.Price>{article.price}€</S.Price>
+            {article.colecao && (
+              <S.CollectionText>
+                {getCollectionName(article.colecao)}
+              </S.CollectionText>
+            )}
             <p>{article.description}</p>
             <S.DimensionsWrapper>
               <S.DimTitle>Dimensões:</S.DimTitle>
-              <S.Dim>Altura: {article.altura} cm</S.Dim>
               <S.Dim>Comprimento: {article.comprimento} cm</S.Dim>
               <S.Dim>Largura: {article.largura} cm</S.Dim>
+              {parseFloat(article.altura) > 0 && (
+                <S.Dim>Altura: {article.altura} cm</S.Dim>
+              )}
             </S.DimensionsWrapper>
           </S.TextWrapper>
-          <Button onClick={() => setIsModalVisible(true)}>Reservar</Button>
+          <S.ButtonWrapper>
+            <Button onClick={() => setIsModalVisible(true)}>Reservar</Button>
+          </S.ButtonWrapper>
         </S.SideWrapper>
-        <S.ImagesContainer>
-          <LazyImage
-            alt='Main Picture'
-            src={article.main_image}
-            Element={<S.MainImage backImage={article.main_image} />}
-          />
-          <S.SecondaryImages>
-            {getImageArray().map((img) => (
-              <LazyImage
-                key={img}
-                alt='Other Picture'
-                src={img}
-                Element={<S.StyledImg key={img} backImage={img} />}
-              />
-            ))}
-          </S.SecondaryImages>
-        </S.ImagesContainer>
+        <S.SecWrapper>
+          <S.MobileLink onClick={() => history.goBack()}>
+            <BsArrowLeft />
+          </S.MobileLink>
+          <S.ImagesContainer>
+            <LazyImage
+              alt='Main Picture'
+              href={article.main_image}
+              target='blank'
+              src={article.main_image}
+              actual={({ imageProps }) => (
+                <S.MainImage {...imageProps}>
+                  <S.ZoomIcon />
+                </S.MainImage>
+              )}
+            />
+            <S.SecondaryImages>
+              {getImageArray().map((img) => (
+                <LazyImage
+                  key={img}
+                  alt='Other Picture'
+                  href={img}
+                  target='blank'
+                  src={img}
+                  actual={({ imageProps }) => (
+                    <S.StyledImg key={img} {...imageProps}>
+                      <S.ZoomIcon />
+                    </S.StyledImg>
+                  )}
+                />
+              ))}
+            </S.SecondaryImages>
+          </S.ImagesContainer>
+        </S.SecWrapper>
       </S.Wrapper>
       <Modal
         isVisible={isModalVisible}
         onClose={() => setIsModalVisible(false)}
       >
-        <ReservationForm productId={id} />
+        <ReservationForm productId={id} options={options} />
       </Modal>
     </Layout>
   ) : (

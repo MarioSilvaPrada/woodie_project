@@ -23,9 +23,23 @@ def recipe_image_file_path(instance, filename):
     return os.path.join('images/products/', filename)
 
 
-class Product(models.Model):
+class Colecao (models.Model):
+    class Meta:
+        verbose_name_plural = "Coleções"
 
     name = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Product(models.Model):
+    class Meta:
+        verbose_name_plural = "Produtos"
+
+    name = models.CharField(max_length=255)
+    colecao = models.ForeignKey(Colecao, on_delete=models.SET_NULL, null=True)
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)
     description = models.CharField(max_length=255)
     altura = models.DecimalField(max_digits=6, decimal_places=2)
@@ -53,7 +67,7 @@ def delete_image_file(sender, instance, **kwargs):
 
 class StyleSettings(models.Model):
     class Meta:
-        verbose_name_plural = "style settings"
+        verbose_name_plural = "Configurações gerais"
 
     logo = models.ImageField(null=True, upload_to=settings_image)
     main_background = models.ImageField(
@@ -84,6 +98,8 @@ class Reservas (models.Model):
         validators=[phone_regex], max_length=17, blank=True, verbose_name='Contacto telefónico')  # validators should be a list
     cidade = models.CharField(max_length=155, blank=True)
     comentario = models.TextField(blank=True, verbose_name='Comentário')
+    subscrever = models.BooleanField(
+        default=False,  verbose_name='Pretendo receber as últimas novidades da Woodi')
     produto = models.ForeignKey(
         Product,
         on_delete=models.PROTECT,
@@ -91,3 +107,14 @@ class Reservas (models.Model):
 
     def __str__(self):
         return f'{self.primeiro_nome} {self.ultimo_nome}'
+
+
+class Subscribers(models.Model):
+    class Meta:
+        verbose_name_plural = "Subscrições"
+
+    name = models.CharField(max_length=155)
+    email = models.EmailField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name

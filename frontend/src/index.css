@@ -8,6 +8,11 @@
   outline: none;
 }
 
+input,
+textarea {
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -27,4 +32,22 @@ h4,
 h5,
 h6 {
   font-family: 'Noto Serif', serif;
+}
+
+@media screen and (max-width: 1400px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 65%;
+  }
 }

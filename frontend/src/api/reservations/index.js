@@ -2,8 +2,7 @@ import api from 'api';
 
 const postReservation = async (params) => {
   try {
-    const res = await api.post(process.env.RESERVATIONS, params);
-
+    const res = await api.post('api/reservations/', params);
     if (res.status === 201) {
       return res;
     }
@@ -16,7 +15,7 @@ const postReservation = async (params) => {
 
 const getReservationOptions = async () => {
   try {
-    const res = await api.options(process.env.RESERVATIONS);
+    const res = await api.options('api/reservations/');
 
     if (res.status === 200) {
       return res.data.actions.POST;

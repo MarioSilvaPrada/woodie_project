@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledForm = styled.form`
-  width: 30rem;
+  width: 100%;
 `;
 
 export const InputsWrapper = styled.div`
@@ -11,6 +11,8 @@ export const InputsWrapper = styled.div`
 export const NameWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 
   div:first-child {
     margin-right: 1rem;

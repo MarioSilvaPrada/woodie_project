@@ -6,7 +6,7 @@ import Success from './Success';
 
 import { postReservation, getReservationOptions } from 'api/reservations';
 
-const ReservationForm = ({ onSubmit, productId, ...props }) => {
+const ReservationForm = ({ onSubmit, productId, options, ...props }) => {
   const initialData = {
     primeiro_nome: '',
     ultimo_nome: '',
@@ -15,10 +15,10 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
     cidade: '',
     comentario: '',
     produto: null,
+    subscrever: false,
   };
   const [reservationData, setReservationData] = useState(initialData);
 
-  const [options, setOptions] = useState(null);
   const [error, setError] = useState(null);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -29,7 +29,12 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
   };
 
   const handleChange = ({ target }) => {
-    setData(target.name, target.value);
+    const iName = target.name;
+    let iValue = target.value;
+    if (iName === 'subscrever') {
+      iValue = !reservationData.subscrever;
+    }
+    setData(iName, iValue);
   };
 
   const createReservation = async (e) => {
@@ -47,9 +52,16 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
     }
   };
 
-  const getOptions = async () => {
-    const res = await getReservationOptions();
-    setOptions(res);
+  const getInputType = (type) => {
+    if (type === 'comentario') {
+      return 'textarea';
+    }
+
+    if (type === 'subscrever') {
+      return 'checkbox';
+    }
+
+    return '';
   };
 
   const getModalContent = () => {
@@ -63,6 +75,7 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
               onChange={handleChange}
               error={error?.primeiro_nome}
               value={reservationData['primeiro_nome']}
+              wrapStyle={{ width: '47%' }}
               isRequired
             />
             <Input
@@ -71,6 +84,7 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
               onChange={handleChange}
               error={error?.ultimo_nome}
               value={reservationData['ultimo_nome']}
+              wrapStyle={{ width: '47%' }}
               isRequired
             />
           </S.NameWrapper>
@@ -86,17 +100,23 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
                   key={key}
                   label={values.label}
                   name={key}
-                  type={key === 'comentario' ? 'textarea' : ''}
+                  type={getInputType(key)}
                   onChange={handleChange}
                   value={reservationData[key]}
                   isRequired={values.required}
+                  additionalInfo={
+                    key === 'cidade' &&
+                    '(Entregas gratuitas na região de Lisboa.)'
+                  }
                   error={error && error[key]}
                 />
               );
             }
           })}
         </S.InputsWrapper>
-        <S.SubmitBtn onClick={(e) => createReservation(e)}>Reservar</S.SubmitBtn>
+        <S.SubmitBtn onClick={(e) => createReservation(e)}>
+          Reservar
+        </S.SubmitBtn>
       </S.StyledForm>
     ) : (
       <Success />
@@ -105,7 +125,6 @@ const ReservationForm = ({ onSubmit, productId, ...props }) => {
 
   useEffect(() => {
     setData('produto', productId);
-    getOptions();
   }, []);
 
   return options && getModalContent();

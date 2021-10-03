@@ -1,24 +1,30 @@
 import React from 'react';
 import * as S from './style';
+import aboutImg from 'assets/images/about-img.jpg';
+import LazyImage from 'components/LazyImage';
+
+import { content } from 'content';
 
 import Layout from 'components/Layout';
 
 const Sobre = () => (
-  <Layout title='Sobre nós'>
+  <Layout title='Sobre'>
     <S.ContentWrapper>
-      <S.Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus
-        suscipit ante ut porttitor. In hac habitasse platea dictumst. Aliquam
-        risus nunc, mattis nec dignissim ut, feugiat sed neque. Morbi id
-        pulvinar quam, at laoreet tellus. Aenean commodo dui nibh, vel
-        pellentesque arcu ultrices quis. Pellentesque et maximus urna. Aliquam
-        vehicula tellus dolor, non dapibus nibh scelerisque sit amet. Quisque in
-        arcu ligula. Sed a porttitor odio, non consequat ligula.
-      </S.Paragraph>
-      <S.StyledImg
-        src={
-          'https://images.pexels.com/photos/461049/pexels-photo-461049.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
-        }
+      <S.TextWrapper>
+        <div>
+          <h2>Sobre a Woodi</h2>
+          <S.Paragraph>{content.about.woodi}</S.Paragraph>
+        </div>
+
+        <div>
+          <h2>Sobre mim</h2>
+          <S.Paragraph>{content.about.myself}</S.Paragraph>
+        </div>
+      </S.TextWrapper>
+      <LazyImage
+        alt='About image'
+        src={aboutImg}
+        actual={({ imageProps }) => <S.StyledImg {...imageProps} />}
       />
     </S.ContentWrapper>
   </Layout>
