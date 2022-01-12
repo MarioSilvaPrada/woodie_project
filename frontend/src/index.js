@@ -50,7 +50,7 @@ const Index = () => {
     setIsLoading(false);
   };
   useEffect(() => {
-    // fetchData();
+    fetchData();
   }, []);
   return !isLoading ? (
     <ThemeProvider theme={theme}>
@@ -97,8 +97,6 @@ const Index = () => {
     </ThemeProvider>
   ) : (
     <div>
-      <h2 style={{ textAlign: 'center' }}>Site em construção</h2>
-      <p style={{ textAlign: 'center' }}>Voltaremos em breve.</p>
       <Spinner />
     </div>
   );
