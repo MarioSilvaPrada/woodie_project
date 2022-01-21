@@ -26,7 +26,7 @@ const Galeria = ({ articles, collections }) => {
           </S.Collection>
         ))}
       </S.CollectionsWrapper>
-      {!!collectionSelected.description && (
+      {!!collectionSelected?.description && (
         <S.CatWrapper>
           {collectionSelected && (
             <S.Paragraph>{collectionSelected.description}</S.Paragraph>
