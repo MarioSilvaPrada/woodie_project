@@ -26,11 +26,13 @@ const Galeria = ({ articles, collections }) => {
           </S.Collection>
         ))}
       </S.CollectionsWrapper>
-      <S.CatWrapper>
-        {collectionSelected && (
-          <S.Paragraph>{collectionSelected.description}</S.Paragraph>
-        )}
-      </S.CatWrapper>
+      {!!collectionSelected.description && (
+        <S.CatWrapper>
+          {collectionSelected && (
+            <S.Paragraph>{collectionSelected.description}</S.Paragraph>
+          )}
+        </S.CatWrapper>
+      )}
       <S.StyledGrid>
         {articles
           .filter((el) =>
