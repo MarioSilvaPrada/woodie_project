@@ -1,9 +1,12 @@
 from django.db import models
 import uuid
 import os
+
 from django.core.validators import RegexValidator
-from django.db.models.signals import post_delete
+from django.db.models.signals import post_delete, post_save
 from django.dispatch.dispatcher import receiver
+from django.core.mail import send_mail
+from django.conf import settings
 
 from colorfield.fields import ColorField
 
@@ -57,8 +60,9 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+
 @receiver(post_delete, sender=Product)
-def delete_image_file(sender, instance, **kwargs):                          
+def delete_image_file(sender, instance, **kwargs):
     instance.main_image.delete(False)
     instance.image1.delete(False)
     instance.image2.delete(False)
@@ -77,10 +81,10 @@ class StyleSettings(models.Model):
     def __str__(self):
         return 'My Settings'
 
+
 @receiver(post_delete, sender=StyleSettings)
-def delete_image_file(sender, instance, **kwargs):                          
+def delete_image_file(sender, instance, **kwargs):
     instance.main_background.delete(False)
-   
 
 
 class Reservas (models.Model):
@@ -118,3 +122,41 @@ class Subscribers(models.Model):
 
     def __str__(self):
         return self.name
+
+
+@receiver(post_save, sender=Reservas)
+def send_reservation_notification(sender, instance, created, **kwargs):
+    if not created:
+        return
+
+    subject = f'Nova reserva de {instance.primeiro_nome}'
+    message = f'{instance.primeiro_nome} {instance.ultimo_nome} quer reservar uma peça: {instance.produto}'
+    from_email = settings.WOODI_EMAIL
+    to_emails = ['mariosilvaprada@gmail.com', 'miguelalarcao@hotmail.com']
+
+    send_mail(
+        subject,
+        message,
+        from_email,
+        to_emails,
+        fail_silently=False,
+    )
+
+
+@receiver(post_save, sender=Subscribers)
+def send_subscribers_notification(sender, instance, created, **kwargs):
+    if not created:
+        return
+
+    subject = f'{instance.name} acabou de subscrever'
+    message = f'Nome: {instance.name}, Email: {instance.email}'
+    from_email = settings.WOODI_EMAIL
+    to_emails = ['mariosilvaprada@gmail.com', 'miguelalarcao@hotmail.com']
+
+    send_mail(
+        subject,
+        message,
+        from_email,
+        to_emails,
+        fail_silently=False,
+    )

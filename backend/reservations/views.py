@@ -25,5 +25,3 @@ class CreateReservationView(CreateAPIView):
                 Subscribers.objects.create(name=name, email=user_email)
 
         serializer.save()
-
-       
