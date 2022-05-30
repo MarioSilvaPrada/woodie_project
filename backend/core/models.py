@@ -132,7 +132,7 @@ def send_reservation_notification(sender, instance, created, **kwargs):
     subject = f'Nova reserva de {instance.primeiro_nome}'
     message = f'{instance.primeiro_nome} {instance.ultimo_nome} quer reservar uma peça: {instance.produto}'
     from_email = settings.WOODI_EMAIL
-    to_emails = ['mariosilvaprada@gmail.com', 'miguelalarcao@hotmail.com']
+    to_emails = ['mariosilvaprada@gmail.com', 'info.da.woodi@gmail.com']
 
     send_mail(
         subject,
@@ -151,7 +151,7 @@ def send_subscribers_notification(sender, instance, created, **kwargs):
     subject = f'{instance.name} acabou de subscrever'
     message = f'Nome: {instance.name}, Email: {instance.email}'
     from_email = settings.WOODI_EMAIL
-    to_emails = ['mariosilvaprada@gmail.com', 'miguelalarcao@hotmail.com']
+    to_emails = ['mariosilvaprada@gmail.com', 'info.da.woodi@gmail.com']
 
     send_mail(
         subject,
