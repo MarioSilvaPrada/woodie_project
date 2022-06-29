@@ -25,7 +25,9 @@ export const Product = styled(Link)`
 `;
 
 export const ProductTitle = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.L};
+  font-size: ${({ theme }) => theme.fontSize.M};
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 `;
 
 export const StyledPrice = styled.p`
